@@ -1,0 +1,111 @@
+body{
+    padding:  10px;     /* 余白指定 */
+    height:  300px;     /* 高さ指定 */
+    background: linear-gradient(-90deg, #006EFF, #00FFD5);  /* グラデーション指定 */
+}
+h1 {
+  position: relative;
+  padding: 0.6em;
+  background: -webkit-repeating-linear-gradient(-45deg, #fff5df, #fff5df 4px,#ffe4b1 3px, #ffe4b1 8px);
+  background: repeating-linear-gradient(-45deg, #fff5df, #fff5df 4px,#ffe4b1 3px, #ffe4b1 8px);
+  border-radius: 7px;
+  font-family: 'arial black';
+}
+
+h1:after {
+  position: absolute;
+  content: '';
+  top: 100%;
+  left: 30px;
+  border: 15px solid transparent;
+  border-top: 15px solid #ffebbe;
+  width: 0;
+  height: 0;
+}
+.breadcrumb {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.breadcrumb li {
+  position: relative;
+  display: inline-block;/*横に並ぶように*/
+  list-style: none;
+  font-weight: bold;/*太字*/
+  margin-right: 0.3em;
+}
+.breadcrumb li:after {
+  content: "";
+  position: absolute;
+  top: 7px;
+  right: -19px;
+  border-style: solid;
+  border-color: transparent;
+  border-left-color: #feebcc;
+  border-width: 7px 12px;
+  width: 0;
+  height: 0;
+}
+
+.breadcrumb li a {
+  display: inline-block;
+  padding: 0 7px;
+  height: 28px;
+  line-height: 28px;
+  text-decoration: none;
+  color: #9b9b9b;
+  background: #feebcc;
+  font-size: 13px;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+.breadcrumb li a:hover {
+  transform: translateY(-3px);
+}
+.box1 {
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    color: #000;
+    background: #33FF66;
+    border-bottom: solid 6px #33FF33;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 9px;
+    font-family: 'arial black';
+}
+.box1 p {
+    margin: 0; 
+    padding: 0;
+}
+.box2{
+    padding: 0.5em 1em;
+    margin: 1em 0;
+    background: #f4f4f4;
+    border-left: solid 6px #5bb7ae;
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.33);
+}
+.box2 p {
+    margin: 0; 
+    padding: 0;
+}
+input.box{
+ width:400px;
+ height:50px;
+ position: absolute;
+ left: 450px;
+ border: 1px solid #666666;
+ background-color: #CCCCFF;
+ padding: 5px;
+ margin: 10px
+}
+input.a{
+width:100px;
+ height:50px;
+ position: absolute;
+ left: 550px;
+ padding: 5px;
+margin: 100px; 
+}
+
+
