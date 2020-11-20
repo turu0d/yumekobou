@@ -1,5 +1,5 @@
 <?php
-
+	
 	$dsn = 'mysql:host=database-2.cnjcx8ih0byc.ap-northeast-1.rds.amazonaws.com;dbname=onsen_db;charset=utf8';
 	$user = 'admin';
 	$pass = 'rootroot1';
@@ -27,11 +27,13 @@ try{
     
   <body>
 		<header>
-			<?php echo '<h1>'.$data['name'].'温泉</h1>'; ?>
+		<?php foreach($data as $row): ?>
+			<h1><?php echo $row['name'].'温泉'; ?></h1>
 			<div style="text-align: right;">
 				<a href="#"><?php echo $data['TEL']; ?></a>
 				<p>住所：<?php echo $data['address']; ?></p>
 			</div>
+		<?php endforeach; ?>
 		</header>
 			<div id="branding">
 			</div>
