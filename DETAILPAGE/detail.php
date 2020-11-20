@@ -28,10 +28,10 @@ try{
   <body>
 		<header>
 		<?php foreach($data as $row): ?>
-			<h1><?php echo $row['name'].'温泉'; ?></h1>
+			<h1><?php echo $row['name']; ?></h1>
 			<div style="text-align: right;">
-				<a href="#"><?php echo $data['TEL']; ?></a>
-				<p>住所：<?php echo $data['address']; ?></p>
+				<p>TEL：<?php echo $row['TEL']; ?></p>
+				<p>住所：<?php echo $row['address']; ?></p>
 			</div>
 		<?php endforeach; ?>
 		</header>
