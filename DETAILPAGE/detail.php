@@ -23,8 +23,6 @@ try{
   <head>
     <meta charset="UTF-8">
 		<title>温泉詳細画面</title>
-		<link href="css/reset.css" rel="stylesheet" type="text/css">
-		<link href="css/css.css" rel="stylesheet" type="text/css">
   </head>
     
   <body>
@@ -39,8 +37,8 @@ try{
 			</div>
 				<nav>
 					<ul>
-						<li><a href="#">口コミサイトの口コミ抜粋(まとめ)・評価(**/5.0)・数値・(グラフ)・(キーワード)</a></li>
-						<li><a href="#">SNSの口コミ抜粋（まとめ）・評価（**/5.0）・数値・（グラフ）・（キーワード）</a></li>
+						<li>口コミサイトの口コミ抜粋(まとめ)・評価(**/5.0)・数値・(グラフ)・(キーワード)</li>
+						<li>SNSの口コミ抜粋（まとめ）・評価（**/5.0）・数値・（グラフ）・（キーワード）</li>
           </ul>
 				</nav>
 		<section>
