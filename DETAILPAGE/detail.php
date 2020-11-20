@@ -29,10 +29,10 @@ try{
     
   <body>
 		<header>
-			<?php echo '<h1>'.$row['name'].'温泉</h1>'; ?>
+			<?php echo '<h1>'.$data['name'].'温泉</h1>'; ?>
 			<div style="text-align: right;">
-				<a href="#"><?php echo $row['TEL']; ?></a>
-				<p>住所：<?php echo $row['address']; ?></p>
+				<a href="#"><?php echo $data['TEL']; ?></a>
+				<p>住所：<?php echo $data['address']; ?></p>
 			</div>
 		</header>
 			<div id="branding">
