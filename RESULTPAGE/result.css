@@ -25,6 +25,17 @@ header nav ul li a:hover {
     color: #888;
 }
 
+main .title{
+	padding: 50px;
+	background: #cd853f;
+}
+
+main .title h1{
+	margin: 0;
+	line-height: 1;
+	font-size: 45px;
+}
+
 main .title ol {
     list-style-type: none;
     margin: 20px 0 0;
@@ -42,8 +53,9 @@ main .title ol li:last-child::after {
     content: none;
 }
 
+
 .kensaku main .jouken {
-	width: 30%;
+	width: 25%;
 	height: 500px;
     padding: 0.5em 1em;
     margin: 2em 0;
@@ -96,4 +108,29 @@ input[type="submit"]{
 input[type="submit"]:hover{
 	background: #67c5ff;
   color: white;
+}
+
+
+
+.kensaku main .kekka {
+      width : 50px ;
+      height : 850px ;
+}
+
+.kensaku main .kekka{
+	position:relative;
+	bottom: 590px;
+		 float : right;
+}
+
+
+.kensaku main .kekka {
+	width: 60%;
+	height: 900px;
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    font-weight: bold;
+    background: #FFF;
+    border: solid 3px #6091d3;/*線*/
+    border-radius: 10px;/*角の丸み*/
 }
