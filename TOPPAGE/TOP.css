@@ -1,8 +1,14 @@
 body{
-    padding:  10px;     /* 余白指定 */
-    height:  300px;     /* 高さ指定 */
-    background: linear-gradient(-90deg, #006EFF, #00FFD5);  /* グラデーション指定 */
+    padding:  0;
+    margin: 0;
 }
+
+img {
+  position: absolute;
+  width: 100%;
+  height: 175%;
+}
+
 h1 {
   position: relative;
   padding: 0.6em;
@@ -15,7 +21,7 @@ h1 {
 h1:after {
   position: absolute;
   content: '';
-  top: 100%;
+  top: 100;
   left: 30px;
   border: 15px solid transparent;
   border-top: 15px solid #ffebbe;
@@ -73,6 +79,8 @@ h1:after {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
     border-radius: 9px;
     font-family: 'arial black';
+    position: relative;
+    width: 250px;
 }
 .box1 p {
     margin: 0; 
@@ -84,6 +92,7 @@ h1:after {
     background: #f4f4f4;
     border-left: solid 6px #5bb7ae;
     box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.33);
+    position: relative;
 }
 .box2 p {
     margin: 0; 
@@ -97,15 +106,27 @@ input.box{
  border: 1px solid #666666;
  background-color: #CCCCFF;
  padding: 5px;
- margin: 10px
+ margin: 10px;
 }
 input.a{
 width:100px;
  height:50px;
  position: absolute;
- left: 550px;
+ left: 525px;
  padding: 5px;
 margin: 100px; 
+}
+ul{
+    position: relative;
+}
+small{
+position: relative;
+ top: 300px;
+    left: 400px;
+ border: 1px solid #666666;
+ background-color: #CCCCFF;
+    padding: 5px;
+margin: 100px;
 }
 
 
