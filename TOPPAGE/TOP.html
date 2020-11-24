@@ -6,8 +6,28 @@
 		<link rel="stylesheet" href="TOP.css">
 	</head>
 <body class="home">
+    
+    <img id="mypic" src="pics1.jpg" >
+            <script>
+            var pics_src = new Array("pics1.jpg","pics2.jpg","pics3.jpg");
+            var num = -1;
+ 
+            slideshow_timer();
+ 
+            function slideshow_timer(){
+                if (num == 2){
+                    num = 0;
+                } 
+                else {
+                    num ++;
+                }
+                document.getElementById("mypic").src=pics_src[num];
+                setTimeout("slideshow_timer()",5000); 
+            }
+            </script>
 	
 	<header>
+        
         <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
   <li itemprop="itemListElement" itemscope
       itemtype="https://schema.org/ListItem">
@@ -20,7 +40,7 @@
   <li itemprop="itemListElement" itemscope
       itemtype="https://schema.org/ListItem">
     <a itemprop="item" href="../RESULTPAGE/result.html">
-        <span itemprop="name">検索結果画面</span>
+        <span itemprop="name">検索結果ページ</span>
     </a>
     <meta itemprop="position" content="2" />
   </li>
@@ -68,7 +88,6 @@
 <!-- 折り畳まれる部分 -->
 <span id="open2" style="display: none; clear: both;">
 	<input type="checkbox" onClick="a1.display=(this.checked?'':'none')">北海道
-	<div id="area1" style="display:none">
 	</div><br>
 	
 	<input type="checkbox" onClick="a2.display=(this.checked?'':'none')">東北
@@ -174,6 +193,8 @@ a9=document.getElementById('area9').style
 	
 
     </ul>
-	</ul>
+<footer>
+     <small> Copyright &copy; 2019 著作権所有者 All rights reserved
+    </footer>
 	</body>
 </html>
