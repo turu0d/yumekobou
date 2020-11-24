@@ -6,8 +6,9 @@ body{
 img {
   position: absolute;
   width: 100%;
-  height: 175%;
+  height: 250%;
 }
+
 
 h1 {
   position: relative;
@@ -112,21 +113,32 @@ input.a{
 width:100px;
  height:50px;
  position: absolute;
- left: 525px;
+ left: 500px;
  padding: 5px;
 margin: 100px; 
 }
+
+
+
 ul{
     position: relative;
 }
 small{
 position: relative;
  top: 300px;
-    left: 400px;
+    left: 430px;
  border: 1px solid #666666;
  background-color: #CCCCFF;
     padding: 5px;
 margin: 100px;
 }
+
+.open3{
+   font-size: 1rem;
+  color: #fff; 
+}
+
+
+
 
 
