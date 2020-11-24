@@ -1,5 +1,30 @@
 @charset "UTF-8";
 
+header {
+    display: flex;
+}
+
+header nav {
+    margin: 0 0 0 auto;
+}
+header nav ul {
+    list-style-type: none;
+    margin: 0px 0;
+    padding: 0;
+    display: flex;
+}
+header nav ul li a,
+header nav ul li a:link,
+header nav ul li a:visited {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #000;
+}
+header nav ul li a:hover {
+    color: #888;
+}
+
 main .title ol {
     list-style-type: none;
     margin: 20px 0 0;
@@ -15,4 +40,60 @@ main .title ol li::after {
 }
 main .title ol li:last-child::after {
     content: none;
+}
+
+.kensaku main .jouken {
+	width: 30%;
+	height: 500px;
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    font-weight: bold;
+    color: #6091d3;/*文字色*/
+    background: #FFF;
+    border: solid 3px #6091d3;/*線*/
+    border-radius: 10px;/*角の丸み*/
+}
+
+
+
+.kensaku main .jouken table {
+    width: 90%;
+	height: 70px;
+    text-align: center;
+}
+.kensaku main table,
+.kensaku main table th,
+.kensaku main table td {
+    border: solid 1px #ccc;
+    border-collapse: collapse;
+}
+.kensaku main table td {
+    padding: 60px;
+}
+.kensaku main table th{
+    background: #f7f0f0;
+    color: #cd853f;
+}
+
+
+
+
+
+p.submit{
+	text-align: center
+}
+
+input[type="submit"]{
+	display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: #67c5ff;
+  border: solid 2px #67c5ff;
+  border-radius: 3px;
+  transition: .4s;
+	cursor: pointer;
+}
+input[type="submit"]:hover{
+	background: #67c5ff;
+  color: white;
 }
