@@ -69,6 +69,7 @@
     </div>
 <ul>
 <!-- 折り畳まれる部分 -->
+<span class="open3">
 <span id="open1" style="display: none; clear: both;">
 	<input type="checkbox" name="riyu" value="1">大浴場<br>
 	<input type="checkbox" name="riyu" value="2">足湯<br>
@@ -76,7 +77,7 @@
 	<input type="checkbox" name="riyu" value="4">混浴<br>
 	<input type="checkbox" name="riyu" value="5">夕食付き<br>
 	</span>
-	
+    </span>
 
 	<div class="box1">
 	<span onclick="obj=document.getElementById('open2').style; obj.display=
@@ -86,87 +87,89 @@
     </div>
 <ul>
 <!-- 折り畳まれる部分 -->
+<span class="open3">
 <span id="open2" style="display: none; clear: both;">
 	<input type="checkbox" onClick="a1.display=(this.checked?'':'none')">北海道
+    <div id="area1" style="display:none">
 	</div><br>
 	
 	<input type="checkbox" onClick="a2.display=(this.checked?'':'none')">東北
 <div id="area2" style="display:none">
-<input type="checkbox" name="riyu" value="12">青森<br>
-<input type="checkbox" name="riyu" value="13">秋田<br>
-<input type="checkbox" name="riyu" value="14">岩手<br>
-<input type="checkbox" name="riyu" value="15">山形<br>
-<input type="checkbox" name="riyu" value="16">宮城<br>
-<input type="checkbox" name="riyu" value="17">福島<br>
-</div>
-	<br>
+&ensp; <input type="checkbox" name="riyu" value="12" class="zisage">青森
+ <input type="checkbox" name="riyu" value="13" class="zisage">秋田
+ <input type="checkbox" name="riyu" value="14" class="zisage">岩手
+ <input type="checkbox" name="riyu" value="15" class="zisage">山形
+ <input type="checkbox" name="riyu" value="16" class="zisage">宮城
+ <input type="checkbox" name="riyu" value="17" class="zisage">福島
+</div><br>
+
 	<input type="checkbox" onClick="a3.display=(this.checked?'':'none')">関東
 	<div id="area3" style="display:none">
-<input type="checkbox" name="riyu" value="18">群馬<br>
-<input type="checkbox" name="riyu" value="19">栃木<br>
-<input type="checkbox" name="riyu" value="20">茨城<br>
-<input type="checkbox" name="riyu" value="21">千葉<br>
-<input type="checkbox" name="riyu" value="22">埼玉<br>
-<input type="checkbox" name="riyu" value="23">東京<br>
-<input type="checkbox" name="riyu" value="24">神奈川<br>
+&ensp; <input type="checkbox" name="riyu" value="18">群馬
+ <input type="checkbox" name="riyu" value="19">栃木
+ <input type="checkbox" name="riyu" value="20">茨城
+ <input type="checkbox" name="riyu" value="21">千葉
+ <input type="checkbox" name="riyu" value="22">埼玉
+ <input type="checkbox" name="riyu" value="23">東京
+ <input type="checkbox" name="riyu" value="24">神奈川
 	</div><br>
 
 		
 	<input type="checkbox" onClick="a4.display=(this.checked?'':'none')">中部・東海
 	<div id="area4" style="display:none">
-<input type="checkbox" name="riyu" value="25">長野<br>
-<input type="checkbox" name="riyu" value="26">山梨<br>
-<input type="checkbox" name="riyu" value="27">静岡<br>
-<input type="checkbox" name="riyu" value="28">愛知<br>
-<input type="checkbox" name="riyu" value="29">岐阜<br>
-<input type="checkbox" name="riyu" value="30">三重<br>
+&ensp; <input type="checkbox" name="riyu" value="25">長野
+ <input type="checkbox" name="riyu" value="26">山梨
+ <input type="checkbox" name="riyu" value="27">静岡
+ <input type="checkbox" name="riyu" value="28">愛知
+ <input type="checkbox" name="riyu" value="29">岐阜
+ <input type="checkbox" name="riyu" value="30">三重
 		</div><br>
 		
 	<input type="checkbox" onClick="a5.display=(this.checked?'':'none')">北陸
 	<div id="area5" style="display:none">
-<input type="checkbox" name="riyu" value="31">新潟<br>
-<input type="checkbox" name="riyu" value="32">富山<br>
-<input type="checkbox" name="riyu" value="33">石川<br>
-<input type="checkbox" name="riyu" value="34">福井<br>
+&ensp; <input type="checkbox" name="riyu" value="31">新潟
+ <input type="checkbox" name="riyu" value="32">富山
+ <input type="checkbox" name="riyu" value="33">石川
+ <input type="checkbox" name="riyu" value="34">福井
 		</div><br>
 
 	
 	<input type="checkbox" onClick="a6.display=(this.checked?'':'none')">近畿
 	<div id="area6" style="display:none">
-<input type="checkbox" name="riyu" value="35">滋賀<br>
-<input type="checkbox" name="riyu" value="36">奈良<br>
-<input type="checkbox" name="riyu" value="37">京都<br>
-<input type="checkbox" name="riyu" value="38">大阪<br>
-<input type="checkbox" name="riyu" value="39">和歌山<br>
-<input type="checkbox" name="riyu" value="40">兵庫<br>
+&ensp; <input type="checkbox" name="riyu" value="35">滋賀
+ <input type="checkbox" name="riyu" value="36">奈良
+ <input type="checkbox" name="riyu" value="37">京都
+ <input type="checkbox" name="riyu" value="38">大阪
+ <input type="checkbox" name="riyu" value="39">和歌山
+ <input type="checkbox" name="riyu" value="40">兵庫
 		</div><br>
 	
 	<input type="checkbox" onClick="a7.display=(this.checked?'':'none')">中国
 	<div id="area7" style="display:none">
-<input type="checkbox" name="riyu" value="41">鳥取<br>
-<input type="checkbox" name="riyu" value="42">岡山<br>
-<input type="checkbox" name="riyu" value="43">島根<br>
-<input type="checkbox" name="riyu" value="44">広島<br>
-<input type="checkbox" name="riyu" value="45">山口<br>
+&ensp; <input type="checkbox" name="riyu" value="41">鳥取
+ <input type="checkbox" name="riyu" value="42">岡山
+ <input type="checkbox" name="riyu" value="43">島根
+ <input type="checkbox" name="riyu" value="44">広島
+ <input type="checkbox" name="riyu" value="45">山口
 		</div><br>
 	
 		<input type="checkbox" onClick="a8.display=(this.checked?'':'none')">四国
 	<div id="area8" style="display:none">
-<input type="checkbox" name="riyu" value="46">香川<br>
-<input type="checkbox" name="riyu" value="47">徳島<br>
-<input type="checkbox" name="riyu" value="48">高知<br>
-<input type="checkbox" name="riyu" value="49">愛媛<br>
+&ensp; <input type="checkbox" name="riyu" value="46">香川
+ <input type="checkbox" name="riyu" value="47">徳島
+ <input type="checkbox" name="riyu" value="48">高知
+ <input type="checkbox" name="riyu" value="49">愛媛
 		</div><br>
 		
 		<input type="checkbox" onClick="a9.display=(this.checked?'':'none')">九州
 	<div id="area9" style="display:none">
-<input type="checkbox" name="riyu" value="50">福岡<br>
-<input type="checkbox" name="riyu" value="51">佐賀<br>
-<input type="checkbox" name="riyu" value="52">長崎<br>
-<input type="checkbox" name="riyu" value="53">大分<br>
-<input type="checkbox" name="riyu" value="54">熊本<br>
-<input type="checkbox" name="riyu" value="55">宮崎<br>
-<input type="checkbox" name="riyu" value="56">鹿児島<br>
+&ensp; <input type="checkbox" name="riyu" value="50">福岡
+ <input type="checkbox" name="riyu" value="51">佐賀
+ <input type="checkbox" name="riyu" value="52">長崎
+ <input type="checkbox" name="riyu" value="53">大分
+ <input type="checkbox" name="riyu" value="54">熊本
+ <input type="checkbox" name="riyu" value="55">宮崎
+ <input type="checkbox" name="riyu" value="56">鹿児島
 		</div><br>
 		
 		<input type="checkbox" name="riyu" value="10">沖縄<br>
@@ -183,7 +186,7 @@ a8=document.getElementById('area8').style
 a9=document.getElementById('area9').style
 	</script>
 	</span>
-	
+    </span>
 	
 <div class="box2">
 	<p>フリーワード検索</p>
@@ -194,7 +197,7 @@ a9=document.getElementById('area9').style
 
     </ul>
 <footer>
-     <small> Copyright &copy; 2019 著作権所有者 All rights reserved
+    <small> Copyright &copy; 2019 著作権所有者 All rights reserved</small>
     </footer>
 	</body>
 </html>
