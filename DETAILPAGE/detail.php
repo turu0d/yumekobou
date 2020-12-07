@@ -31,19 +31,28 @@ try{
 	<meta charset="UTF-8">
 	<title>温泉詳細画面</title>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script> <!-- ChartJSのインポート -->
+	<link rel="stylesheet" href="detail.css">
 </head>
 
 <body>
 	<header>
 		<?php foreach($data1 as $row1): ?>
 		<h1><?php echo $row1['name']; ?></h1>
-		<div style="text-align: right;">
+		<div style="float: left;"> <!-- 写真div要素-->
+			<img src="atami.jpg" alt="熱海温泉の写真" title="熱海温泉" width="300" height="200">
+		</div>
+		<div style="text-align: right;"><!-- 電話番号、住所div要素-->
 			<p>TEL：<?php echo $row1['TEL']; ?></p>
 			<p>住所：<?php echo $row1['address']; ?></p>
 		</div>
+		<div style="text-align: left;"> <!-- 説明文div要素(文字数210文字程度)-->
+			<p>伊豆半島北東端、熱海駅の北東から南東にかけて、相模灘に面する海沿いに旅館やホテルが立ち並ぶ。眺望を求めて山腹に立地する施設もある。昔からの温泉街は山のすそ野にある駅近辺から海岸沿いまで広がる。熱海駅併設のラスカ熱海や駅近くの商店街、起雲閣のような観光施設、海浜の海水浴場や、さらに南側にある錦ヶ浦や熱海城、沖合に浮かぶ初島まで含めた観光地となっている。
+			熱海駅は伊東線の始発駅で、伊豆観光の東の玄関口的な立地ともなっている。
+			</p>
+		</div>
 		<?php endforeach; ?>
 	</header>
-	<div style="height:350px; width:500px; float:left;">
+	<div style="height:350px; width:500px; float:left; clear:both;">
 		<!-- グラフ表示枠を規定 -->
 		<canvas id="KuchikomiChart"></canvas> <!-- ここにグラフを表示 -->
 	</div>
