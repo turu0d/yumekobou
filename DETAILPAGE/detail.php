@@ -39,7 +39,7 @@ try{
 		<?php foreach($data1 as $row1): ?>
 		<h1><?php echo $row1['name']; ?></h1>
 		<div style="float: left;"> <!-- 写真div要素-->
-			<img src="atami.jpg" alt="熱海温泉の写真" title="熱海温泉" width="300" height="200">
+			<img src="atami.jpg" alt="熱海温泉の写真" title="熱海温泉" width="300" height="200" style="margin: 0 30 30 0">
 		</div>
 		<div style="text-align: right;"><!-- 電話番号、住所div要素-->
 			<p>TEL：<?php echo $row1['TEL']; ?></p>
