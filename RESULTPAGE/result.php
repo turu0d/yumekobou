@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -14,13 +15,12 @@
 		</ul>
 	</nav>
 	</header>
-	
 
 <main>
 	<div class="title">
 		<h1>検索結果</h1>
 		<ol>
-			<li><a href="../TOPPAGE/TOP.html">TOP</a></li>
+			<li><a href="TOP.html">TOP</a></li>
 			<li>検索結果</li>
 		</ol>
 	</div>
@@ -30,11 +30,25 @@
                 <table>
                     <tr><th></th><th>検索条件</th></tr>
 					<tr><th>エリア</th>
-						<td></td></tr>
+						<td>	<?php
+if (isset($_POST['riyu'])) {
+    $riyu = implode(", ", $_POST["riyu"]);
+    echo $riyu ;
+} else {
+    echo 'チェックされていません。<br>';
+}
+?></td></tr>
                     <tr><th>条件</th>
-						<td></td></tr>
+						<td><?php
+if (isset($_POST['tokucho'])) {
+    $tokucho = implode(", ", $_POST["tokucho"]);
+    echo  $tokucho ;
+} else {
+    echo 'チェックされていません。<br>';
+}
+?></td></tr>
                 </table>
-						<form action="phpを記入" method="post">
+						<form action="" method="post">
 						
 					      <p class="submit"><input type="submit" name="submit" value="再検索"></p>
 					</form>
