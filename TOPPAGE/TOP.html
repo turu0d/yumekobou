@@ -61,21 +61,23 @@
 	</main>
 	
     <div class="box1">
-        
+
 	<span onclick="obj=document.getElementById('open1').style; obj.display=
 (obj.display=='none')?'block':'none';">
 <a style="cursor:pointer;">▼ 特徴を選択(複数選択可能)</a>
+
 </span>
-    </div>
+	</div>
+<form method="POST"action="../RESULTPAGE/result.php">
 <ul>
 <!-- 折り畳まれる部分 -->
 <span class="open3">
 <span id="open1" style="display: none; clear: both;">
-	<input type="checkbox" name="riyu" value="1">大浴場<br>
-	<input type="checkbox" name="riyu" value="2">足湯<br>
-	<input type="checkbox" name="riyu" value="3">露天風呂<br>
-	<input type="checkbox" name="riyu" value="4">混浴<br>
-	<input type="checkbox" name="riyu" value="5">夕食付き<br>
+	<input type="checkbox" name="tokucho[]" value="大浴場">大浴場<br>
+	<input type="checkbox" name="tokucho[]" value="足湯">足湯<br>
+	<input type="checkbox" name="tokucho[]" value="露天風呂">露天風呂<br>
+	<input type="checkbox" name="tokucho[]" value="混浴">混浴<br>
+	<input type="checkbox" name="tokucho[]" value="夕食付">夕食付き<br>
 	</span>
     </span>
 
@@ -89,90 +91,91 @@
 <!-- 折り畳まれる部分 -->
 <span class="open3">
 <span id="open2" style="display: none; clear: both;">
-	<input type="checkbox" onClick="a1.display=(this.checked?'':'none')">北海道
-    <div id="area1" style="display:none">
+	<input type="checkbox" name="riyu[]" value="北海道">北海道
+	<div id="area1" style="display:none">
 	</div><br>
 	
 	<input type="checkbox" onClick="a2.display=(this.checked?'':'none')">東北
 <div id="area2" style="display:none">
-&ensp; <input type="checkbox" name="riyu" value="12" class="zisage">青森
- <input type="checkbox" name="riyu" value="13" class="zisage">秋田
- <input type="checkbox" name="riyu" value="14" class="zisage">岩手
- <input type="checkbox" name="riyu" value="15" class="zisage">山形
- <input type="checkbox" name="riyu" value="16" class="zisage">宮城
- <input type="checkbox" name="riyu" value="17" class="zisage">福島
+&ensp; <input type="checkbox" name="riyu[]" value="青森" class="zisage">青森
+ <input type="checkbox" name="riyu[]" value="秋田" class="zisage">秋田
+ <input type="checkbox" name="riyu[]" value="岩手" class="zisage">岩手
+ <input type="checkbox" name="riyu[]" value="山形" class="zisage">山形
+ <input type="checkbox" name="riyu[]" value="宮城" class="zisage">宮城
+ <input type="checkbox" name="riyu[]" value="福島" class="zisage">福島
 </div><br>
 
 	<input type="checkbox" onClick="a3.display=(this.checked?'':'none')">関東
 	<div id="area3" style="display:none">
-&ensp; <input type="checkbox" name="riyu" value="18">群馬
- <input type="checkbox" name="riyu" value="19">栃木
- <input type="checkbox" name="riyu" value="20">茨城
- <input type="checkbox" name="riyu" value="21">千葉
- <input type="checkbox" name="riyu" value="22">埼玉
- <input type="checkbox" name="riyu" value="23">東京
- <input type="checkbox" name="riyu" value="24">神奈川
+&ensp; <input type="checkbox" name="riyu[]" value="群馬">群馬
+ <input type="checkbox" name="riyu[]" value="栃木">栃木
+ <input type="checkbox" name="riyu[]" value="茨城">茨城
+ <input type="checkbox" name="riyu[]" value="千葉">千葉
+ <input type="checkbox" name="riyu[]" value="埼玉">埼玉
+ <input type="checkbox" name="riyu[]" value="東京">東京
+ <input type="checkbox" name="riyu[]" value="神奈川">神奈川
 	</div><br>
 
 		
 	<input type="checkbox" onClick="a4.display=(this.checked?'':'none')">中部・東海
 	<div id="area4" style="display:none">
-&ensp; <input type="checkbox" name="riyu" value="25">長野
- <input type="checkbox" name="riyu" value="26">山梨
- <input type="checkbox" name="riyu" value="27">静岡
- <input type="checkbox" name="riyu" value="28">愛知
- <input type="checkbox" name="riyu" value="29">岐阜
- <input type="checkbox" name="riyu" value="30">三重
+&ensp; <input type="checkbox" name="riyu[]" value="長野">長野
+ <input type="checkbox" name="riyu[]" value="山梨">山梨
+ <input type="checkbox" name="riyu[]" value="静岡">静岡
+ <input type="checkbox" name="riyu[]" value="愛知">愛知
+ <input type="checkbox" name="riyu[]" value="岐阜">岐阜
+ <input type="checkbox" name="riyu[]" value="三重">三重
 		</div><br>
 		
 	<input type="checkbox" onClick="a5.display=(this.checked?'':'none')">北陸
 	<div id="area5" style="display:none">
-&ensp; <input type="checkbox" name="riyu" value="31">新潟
- <input type="checkbox" name="riyu" value="32">富山
- <input type="checkbox" name="riyu" value="33">石川
- <input type="checkbox" name="riyu" value="34">福井
+&ensp; <input type="checkbox" name="riyu[]" value="新潟">新潟
+ <input type="checkbox" name="riyu[]" value="富山">富山
+ <input type="checkbox" name="riyu[]" value="石川">石川
+ <input type="checkbox" name="riyu[]" value="福井">福井
 		</div><br>
 
 	
 	<input type="checkbox" onClick="a6.display=(this.checked?'':'none')">近畿
 	<div id="area6" style="display:none">
-&ensp; <input type="checkbox" name="riyu" value="35">滋賀
- <input type="checkbox" name="riyu" value="36">奈良
- <input type="checkbox" name="riyu" value="37">京都
- <input type="checkbox" name="riyu" value="38">大阪
- <input type="checkbox" name="riyu" value="39">和歌山
- <input type="checkbox" name="riyu" value="40">兵庫
+&ensp; <input type="checkbox" name="riyu[]" value="滋賀">滋賀
+ <input type="checkbox" name="riyu[]" value="奈良">奈良
+ <input type="checkbox" name="riyu[]" value="京都">京都
+ <input type="checkbox" name="riyu[]" value="大阪">大阪
+ <input type="checkbox" name="riyu[]" value="和歌山">和歌山
+ <input type="checkbox" name="riyu[]" value="兵庫">兵庫
 		</div><br>
 	
 	<input type="checkbox" onClick="a7.display=(this.checked?'':'none')">中国
 	<div id="area7" style="display:none">
-&ensp; <input type="checkbox" name="riyu" value="41">鳥取
- <input type="checkbox" name="riyu" value="42">岡山
- <input type="checkbox" name="riyu" value="43">島根
- <input type="checkbox" name="riyu" value="44">広島
- <input type="checkbox" name="riyu" value="45">山口
+&ensp; <input type="checkbox" name="riyu[]" value="鳥取">鳥取
+ <input type="checkbox" name="riyu[]" value="岡山">岡山
+ <input type="checkbox" name="riyu[]" value="島根">島根
+ <input type="checkbox" name="riyu[]" value="広島">広島
+ <input type="checkbox" name="riyu[]" value="山口">山口
 		</div><br>
 	
 		<input type="checkbox" onClick="a8.display=(this.checked?'':'none')">四国
 	<div id="area8" style="display:none">
-&ensp; <input type="checkbox" name="riyu" value="46">香川
- <input type="checkbox" name="riyu" value="47">徳島
- <input type="checkbox" name="riyu" value="48">高知
- <input type="checkbox" name="riyu" value="49">愛媛
+&ensp; <input type="checkbox" name="riyu[]" value="香川">香川
+ <input type="checkbox" name="riyu[]" value="徳島">徳島
+ <input type="checkbox" name="riyu[]" value="高知">高知
+ <input type="checkbox" name="riyu[]" value="愛媛">愛媛
 		</div><br>
 		
 		<input type="checkbox" onClick="a9.display=(this.checked?'':'none')">九州
 	<div id="area9" style="display:none">
-&ensp; <input type="checkbox" name="riyu" value="50">福岡
- <input type="checkbox" name="riyu" value="51">佐賀
- <input type="checkbox" name="riyu" value="52">長崎
- <input type="checkbox" name="riyu" value="53">大分
- <input type="checkbox" name="riyu" value="54">熊本
- <input type="checkbox" name="riyu" value="55">宮崎
- <input type="checkbox" name="riyu" value="56">鹿児島
+&ensp; 
+<input type="checkbox" name="riyu[]" value="福岡">福岡
+ <input type="checkbox" name="riyu[]" value="佐賀">佐賀
+ <input type="checkbox" name="riyu[]" value="長崎">長崎
+ <input type="checkbox" name="riyu[]" value="大分">大分
+ <input type="checkbox" name="riyu[]" value="熊本">熊本
+ <input type="checkbox" name="riyu[]" value="宮崎">宮崎
+ <input type="checkbox" name="riyu[]" value="鹿児島">鹿児島
 		</div><br>
 		
-		<input type="checkbox" name="riyu" value="10">沖縄<br>
+		<input type="checkbox" name="riyu[]" value="沖縄">沖縄<br>
 
 	<script language="javascript">
 a1=document.getElementById('area1').style
@@ -193,9 +196,11 @@ a9=document.getElementById('area9').style
     </div>
 	<input type="search" name="in01" size="15" maxlength="20" placeholder="温泉名入力" class="box">
     <p><input type="submit" name="submit" value="検索する" class="a"></p>
+	</ul>
 	
 
     </ul>
+	</form>
 <footer class="foot">
     <small> &copy; 2020 yumekoubou All rights reserved</small>
     </footer>
