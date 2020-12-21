@@ -5,9 +5,29 @@
 		<title>温泉</title>
 		<link rel="stylesheet" href="TOP.css">
 	</head>
-<body class="home">
+<body class="home" >
     
-    <img id="mypic" src="pics1.jpg" >
+    
+	<header>
+        <nav>
+		<ul>
+			<li><a href="../RESULTPAGE/result.php">検索結果</a></li>
+			<li><a href="../DETAILPAGE/detail.php">詳細</a></li>
+		</ul>
+	</nav>
+	</header>
+
+<main>
+    <div class="title">
+		<h1>TOPページ</h1>
+		<ol>
+			<li><a href="../TOPPAGE/TOP.html">TOP</a></li>
+		</ol>
+	</div>
+
+	<div class="example">
+        
+        <img id="mypic" src="pics1.jpg" >
             <script>
             var pics_src = new Array("pics1.jpg","pics2.jpg","pics3.jpg");
             var num = -1;
@@ -25,41 +45,9 @@
                 setTimeout("slideshow_timer()",5000); 
             }
             </script>
-	
-	<header>
         
-        <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
-  <li itemprop="itemListElement" itemscope
-      itemtype="https://schema.org/ListItem">
-    <a itemprop="item" href="TOP.html">
-        <span itemprop="name">ホーム</span>
-    </a>
-    <meta itemprop="position" content="1" />
-  </li>
-
-  <li itemprop="itemListElement" itemscope
-      itemtype="https://schema.org/ListItem">
-    <a itemprop="item" href="../RESULTPAGE/result.html">
-        <span itemprop="name">検索結果ページ</span>
-    </a>
-    <meta itemprop="position" content="2" />
-  </li>
-
-  <li itemprop="itemListElement" itemscope
-      itemtype="https://schema.org/ListItem">
-    <a itemprop="item" href="../DETAILPAGE/detail.php">
-        <span itemprop="name">詳細ぺージ</span>
-    </a>
-    <meta itemprop="position" content="3" />
-  </li>
-</ol>
-
-	</header>
-<main>
-    <h1>TOPページ</h1>
-
-	</main>
-	
+    <div class="box3">
+        
     <div class="box1">
 
 	<span onclick="obj=document.getElementById('open1').style; obj.display=
@@ -194,15 +182,20 @@ a9=document.getElementById('area9').style
 <div class="box2">
 	<p>フリーワード検索</p>
     </div>
-	<input type="textarea" name="in01" size="15" maxlength="20" value="">
-    <p><input type="submit" value="検索する"></p>
+	<input type="textarea" name="in01" size="15" maxlength="20" placeholder="温泉名入力" class="box" value="">
+    <p><input type="submit"  value="検索する" class="a"></p>
 	</ul>
 	
 
     </ul>
 	</form>
+        
+    </div>
+    </div>
+    
 <footer class="foot">
     <small> &copy; 2020 yumekoubou All rights reserved</small>
     </footer>
-	</body>
+    </main>
+    </body>
 </html>
