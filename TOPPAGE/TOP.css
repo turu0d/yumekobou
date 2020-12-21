@@ -1,25 +1,40 @@
-body{
-    padding:  0;
-    margin: 0;
+@charset "UTF-8";
+
+header {
+    display: flex;
 }
 
-img {
-  position: absolute;
-  width: 100%;
-  height: 250%;
+header nav {
+    margin: 0 0 0 auto;
+}
+header nav ul {
+    list-style-type: none;
+    margin: 0px 0;
+    padding: 0;
+    display: flex;
+}
+header nav ul li a,
+header nav ul li a:link,
+header nav ul li a:visited {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #000;
+}
+header nav ul li a:hover {
+    color: #888;
 }
 
-
-h1 {
-  position: relative;
+/*タイトル*/
+main .title h1{
+	position: relative;
   padding: 0.6em;
   background: -webkit-repeating-linear-gradient(-45deg, #fff5df, #fff5df 4px,#ffe4b1 3px, #ffe4b1 8px);
   background: repeating-linear-gradient(-45deg, #fff5df, #fff5df 4px,#ffe4b1 3px, #ffe4b1 8px);
   border-radius: 7px;
   font-family: 'arial black';
 }
-
-h1:after {
+main .title h1:after {
   position: absolute;
   content: '';
   top: 100;
@@ -29,51 +44,58 @@ h1:after {
   width: 0;
   height: 0;
 }
-.breadcrumb {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+
+	
 }
 
-.breadcrumb li {
-  position: relative;
-  display: inline-block;/*横に並ぶように*/
-  list-style: none;
-  font-weight: bold;/*太字*/
-  margin-right: 0.3em;
-}
-.breadcrumb li:after {
-  content: "";
-  position: absolute;
-  top: 7px;
-  right: -19px;
-  border-style: solid;
-  border-color: transparent;
-  border-left-color: #feebcc;
-  border-width: 7px 12px;
-  width: 0;
-  height: 0;
+main .title h1{
+	margin: 0;
+	line-height: 1;
+	font-size: 45px;
 }
 
-.breadcrumb li a {
-  display: inline-block;
-  padding: 0 7px;
-  height: 28px;
-  line-height: 28px;
-  text-decoration: none;
-  color: #9b9b9b;
-  background: #feebcc;
-  font-size: 13px;
-  border-radius: 20px;
-  transition: 0.3s;
+main .title ol {
+    list-style-type: none;
+    margin: 20px 0 0;
+    padding: 0;
+    display: flex;
+}
+main .title ol li {
+    font-size: 13px;
+}
+main .title ol li::after {
+    content: ">";
+    margin: 0 5px 0 10px;
+}
+main .title ol li:last-child::after {
+    content: none;
 }
 
-.breadcrumb li a:hover {
-  transform: translateY(-3px);
+p.submit{
+	text-align: center
 }
-.box1 {
+
+/*背景設定*/
+.example {/*親div*/
+  position: relative;/*相対配置*/
+  }
+
+.example .box3{
+  position: absolute;/*絶対配置*/
+  color: white;/*文字は白に*/
+  top: 0;
+  left: 0;
+  }
+
+.example mypic{
+  width: 100%;
+  }
+
+
+/*チェックボックス*/
+.home main .box1 {
     padding: 0.5em 1em;
-    margin: 2em 0;
+    margin: 2em 1em;
     color: #000;
     background: #33FF66;
     border-bottom: solid 6px #33FF33;
@@ -83,60 +105,67 @@ h1:after {
     position: relative;
     width: 250px;
 }
-.box1 p {
+.home main .box1 p {
     margin: 0; 
     padding: 0;
+    position: absolute;
+    
+    
 }
-.box2{
-    padding: 0.5em 1em;
-    margin: 1em 0;
-    background: #f4f4f4;
-    border-left: solid 6px #5bb7ae;
-    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.33);
+
+/*フリーワード検索*/
+.home main .box2{
+    padding: 1em 0.5em;
+    margin: 2em 1em;
+    color: #000;
+    background: #33FF66;
+    border-bottom: solid 6px #33FF33;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 9px;
+    font-family: 'arial black';
     position: relative;
+    width: 140px
 }
-.box2 p {
+.home main .box2 p {
     margin: 0; 
     padding: 0;
+    position: absolute;
 }
-input.box{
- width:400px;
- height:50px;
+
+/*入力エリア*/
+.box{
+ width:500px;
+ height:10px;
  position: absolute;
  left: 450px;
  border: 1px solid #666666;
  background-color: #CCCCFF;
- padding: 5px;
- margin: 10px;
+ padding: 1em 0.5em;
+ margin: 2em 1em;
 }
-input.a{
+
+/*検索ボタン*/
+.a{
 width:100px;
  height:50px;
  position: absolute;
- left: 500px;
- padding: 5px;
-margin: 100px; 
+ padding: 1em 0.5em;
+ margin: 2em 1em;
 }
 
 
-
-ul{
-    position: relative;
-}
-small{
+/*フッター*/
+.foot{
 position: relative;
- top: 300px;
-    left: 430px;
+ bottom: 0;
+    left: 300px;
  border: 1px solid #666666;
- background-color: #CCCCFF;
-    padding: 5px;
-margin: 100px;
+    padding: ;
+margin: 10px;
+    
 }
 
-.open3{
-   font-size: 1rem;
-  color: #fff; 
-}
+
 
 
 
