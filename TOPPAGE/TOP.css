@@ -115,11 +115,11 @@ p.submit{
 
 /*フリーワード検索*/
 .home main .box2{
-    padding: 1em 0.5em;
+    padding: 0.5em 0.5em;
     margin: 2em 1em;
     color: #000;
-    background: #33FF66;
-    border-bottom: solid 6px #33FF33;
+    background: #66FFCC;
+    border-bottom: solid 6px #66FFCC;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
     border-radius: 9px;
     font-family: 'arial black';
@@ -129,7 +129,6 @@ p.submit{
 .home main .box2 p {
     margin: 0; 
     padding: 0;
-    position: absolute;
 }
 
 /*入力エリア*/
@@ -137,7 +136,7 @@ p.submit{
  width:500px;
  height:10px;
  position: absolute;
- left: 450px;
+ left: 100px;
  border: 1px solid #666666;
  background-color: #CCCCFF;
  padding: 1em 0.5em;
@@ -151,18 +150,17 @@ width:100px;
  position: absolute;
  padding: 1em 0.5em;
  margin: 2em 1em;
+ left: 700px;
 }
 
 
 /*フッター*/
 .foot{
-position: relative;
- bottom: 0;
-    left: 300px;
- border: 1px solid #666666;
+    position: relative;
+    bottom: 0;
+    border: 1px solid #666666;
     padding: ;
-margin: 10px;
-    
+    margin: 10px;
 }
 
 
