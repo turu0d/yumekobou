@@ -1,9 +1,10 @@
 <?php
-	$dsn = 'mysql:host=database-2.cnjcx8ih0byc.ap-northeast-1.rds.amazonaws.com;dbname=onsen_db;charset=utf8';
-	$user = 'admin';
-	$pass = 'rootroot1';
-	$dbh = new PDO($dsn, $user, $pass);
-	$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+	$dsn = 'mysql:dbname=onsen_db;host=localhost;charset=utf8'; //MySQLのonsen_dbというデータベースに接続。文字エンコーディングの指定。
+	$user = 'root';
+	$password = '';
+	$dbh = new PDO($dsn, $user, $password);
+	$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); //PDOのエラーレポートの表示。 PDO::ATTR_ERRMODEという属性でPDO::ERRMODE_EXCEPTIONの値を設定することでエラーが発生したときに、PDOExceptionの例外を投げてくれます。
 
 try{
 	$sql1 = 'SELECT ID, name, TEL, address, URL, reserve_site_URL, image, characteristic FROM onsen_info_tb';
@@ -36,8 +37,26 @@ try{
 
 <body>
 	<header>
-		<?php foreach($data1 as $row1): ?>
+ <nav>
+		<ul>
+			<li><a href="../RESULTPAGE/result.php">検索結果</a></li>
+			<li><a href="../DETAILPAGE/detail.php">詳細</a></li>
+		</ul>
+	</nav>
+	</header>
+    
+<main>
+    <div class="title">
+		
+    <?php foreach($data1 as $row1): ?>
 		<h1><?php echo $row1['name']; ?></h1>
+        <ol>
+			<li><a href="../TOPPAGE/TOP.html">TOP</a></li>
+            <li><a href="../RESULTPAGE/result.php">検索結果</a></li>
+			<li>詳細</li>
+		</ol>
+    </div>
+    
 		<div style="float: left;"> <!-- 写真div要素-->
 			<img src="atami.jpg" alt="熱海温泉の写真" title="熱海温泉" width="300" height="200" style="margin: 0 30 30 0">
 		</div>
@@ -51,7 +70,6 @@ try{
 			</p>
 		</div>
 		<?php endforeach; ?>
-	</header>
 	<div style="height:350px; width:500px; float:left; clear:both;">
 		<!-- グラフ表示枠を規定 -->
 		<canvas id="KuchikomiChart"></canvas> <!-- ここにグラフを表示 -->
@@ -172,6 +190,11 @@ try{
 		});
 	</script>
 
-</body>
 
+<footer class="foot">
+    <small> &copy; 2020 yumekoubou All rights reserved</small>
+    </footer>
+    
+</main>
+</body>
 </html>

@@ -9,7 +9,7 @@ header nav {
 }
 header nav ul {
     list-style-type: none;
-    margin: 0px 0;
+    margin: 0px 0; 
     padding: 0;
     display: flex;
 }
@@ -49,11 +49,6 @@ main .title h1:after {
 	
 }
 
-main .title h1{
-	margin: 0;
-	line-height: 1;
-	font-size: 45px;
-}
 
 main .title ol {
     list-style-type: none;

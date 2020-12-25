@@ -197,3 +197,48 @@ input[type="submit"]:hover{
     border: solid 3px #6091d3;/*線*/
     border-radius: 10px;/*角の丸み*/
 }
+
+@media screen and (min-width: 641px){ /* PC用 */
+
+    /* PC用固有の設定をここに移動 */
+    body {
+        min-width: 900px;
+    }
+
+    .flexbox-container {
+        display: flex;
+    }
+
+    main {
+        width: 100%;
+        min-width: 600px;
+        max-width: 1000px;
+        margin: auto;
+        background-color: lightgreen;
+        height: 300px;
+    }
+
+    aside {
+        width: 300px;
+        min-width: 300px;
+        margin: auto;
+        background-color: lightpink;
+        height: 300px;
+    }
+
+}
+
+@media screen and (max-width: 640px){ /* スマートフォン用 */
+
+    /* スマートフォン用固有の設定をここに記述 */
+    main {
+        background-color: lightgreen;
+        height: 300px;
+    }
+
+    aside {
+        background-color: lightpink;
+        height: 300px;
+    }
+
+}
