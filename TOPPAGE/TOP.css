@@ -27,12 +27,13 @@ header nav ul li a:hover {
 
 /*タイトル*/
 main .title h1{
-	position: relative;
-  padding: 0.6em;
+  position: relative;
+  padding: 0.25em;
+  text-align:center;
   background: -webkit-repeating-linear-gradient(-45deg, #fff5df, #fff5df 4px,#ffe4b1 3px, #ffe4b1 8px);
   background: repeating-linear-gradient(-45deg, #fff5df, #fff5df 4px,#ffe4b1 3px, #ffe4b1 8px);
   border-radius: 7px;
-  font-family: 'arial black';
+  font-family: "Kokoro", cursive;
 }
 main .title h1:after {
   position: absolute;
@@ -101,35 +102,35 @@ p.submit{
     border-bottom: solid 6px #33FF33;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
     border-radius: 9px;
-    font-family: 'arial black';
     position: relative;
-    width: 250px;
+    width: 310px;
+    font-size: 20px;
+    font-family: "serif";
 }
 .home main .box1 p {
     margin: 0; 
     padding: 0;
     position: absolute;
-    
-    
 }
 
 /*フリーワード検索*/
 .home main .box2{
-    padding: 1em 0.5em;
+    padding: 0.5em 0.5em;
     margin: 2em 1em;
     color: #000;
-    background: #33FF66;
-    border-bottom: solid 6px #33FF33;
+    background: #66FFCC;
+    border-bottom: solid 6px #66FFCC;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
     border-radius: 9px;
     font-family: 'arial black';
     position: relative;
-    width: 140px
+    width: 180px;
+    font-size: 20px;
+    font-family: "serif";
 }
 .home main .box2 p {
     margin: 0; 
     padding: 0;
-    position: absolute;
 }
 
 /*入力エリア*/
@@ -137,11 +138,11 @@ p.submit{
  width:500px;
  height:10px;
  position: absolute;
- left: 450px;
+ left: 200px;
  border: 1px solid #666666;
  background-color: #CCCCFF;
  padding: 1em 0.5em;
- margin: 2em 1em;
+ margin: 1em 1em;
 }
 
 /*検索ボタン*/
@@ -150,19 +151,18 @@ width:100px;
  height:50px;
  position: absolute;
  padding: 1em 0.5em;
- margin: 2em 1em;
+ margin: 0.9em 1em;
+ left: 800px;
 }
 
 
 /*フッター*/
 .foot{
-position: relative;
- bottom: 0;
-    left: 300px;
- border: 1px solid #666666;
+    position: relative;
+    bottom: 0;
+    border: 1px solid #666666;
     padding: ;
-margin: 10px;
-    
+    margin: 10px;
 }
 
 
