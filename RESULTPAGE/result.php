@@ -24,6 +24,11 @@
 			<li>検索結果</li>
 		</ol>
 	</div>
+    
+    <!-- みだりの枠 -->
+    
+    <div class="left-column">
+        
 	<div class="jouken">
 			<form action="../RESULTPAGE/result.php" method="post">
 		<div>
@@ -38,17 +43,9 @@ if (isset($_POST['riyu'])) {
 } else {
     echo 'チェックされていません。<br>';
 }
-?>
-			<div class="box1">
-	<span onclick="obj=document.getElementById('open2').style; obj.display=
-(obj.display=='none')?'block':'none';">
-<a style="cursor:pointer;">▼ エリアから選択</a>
-</span>
-    </div>
-<ul>
-<!-- 折り畳まれる部分 -->
-<span class="open3">
-<span id="open2" style="display: none; clear: both;">
+?><br>
+<form method="post" action="check.php">
+    <ul>
 	<input type="checkbox" name="riyu[]" value="北海道">北海道
 	<div id="area1" style="display:none">
 	</div><br>
@@ -146,9 +143,7 @@ a7=document.getElementById('area7').style
 a8=document.getElementById('area8').style
 a9=document.getElementById('area9').style
 	</script>
-	</span>
-    </span>
-							</ul></td></tr>
+	</ul></form></td></tr>
                     <tr><th>条件</th>
 						<td><?php
 if (isset($_POST['tokucho'])) {
@@ -158,26 +153,17 @@ if (isset($_POST['tokucho'])) {
     echo 'チェックされていません。<br>';
 }
 ?>
-				    <div class="box1">
 
-	<span onclick="obj=document.getElementById('open1').style; obj.display=
-(obj.display=='none')?'block':'none';">
-<a style="cursor:pointer;">▼ 特徴を選択</a>
-
-</span>
-	</div>
 
 <ul>
 <!-- 折り畳まれる部分 -->
-<span class="open3">
-<span id="open1" style="display: none; clear: both;">
+
 	<input type="checkbox" name="tokucho[]" value="大浴場">大浴場<br>
 	<input type="checkbox" name="tokucho[]" value="足湯">足湯<br>
 	<input type="checkbox" name="tokucho[]" value="露天風呂">露天風呂<br>
 	<input type="checkbox" name="tokucho[]" value="混浴">混浴<br>
 	<input type="checkbox" name="tokucho[]" value="夕食付">夕食付き<br>
-	</span>
-	</span></ul>
+</ul>
 						</td></tr>
 					<tr><th>フリーワード</th>
                         <td><?php
@@ -194,6 +180,17 @@ if (empty($_POST['in01'])){
 					<p class="submit"><input type="submit" name="submit" value="再検索"></p>
 				</div></form>
 		</div>
+        
+        <form action="../TOPPAGE/TOP.html" method="post">
+						
+					      <p class="submit2"><input type="submit" name="submit2" value="戻る"></p>
+					</form>
+        </div>
+    
+    <!-- ここから検索結果 -->
+    
+        <div class="right-column">
+            
 			<div class="kekka">
 				<div>
                 <h2>検索結果</h2>
@@ -206,16 +203,23 @@ if (isset($_POST['riyu'])) {
     echo 'チェックされていません。<br>';
 }
 ?></dd>
+				<dt></dt><dd><?php
+if (isset($_POST['tokucho'])) {
+    $tokucho = implode(", ", $_POST["tokucho"]);
+    echo  $tokucho ;
+} else {
+    echo 'チェックされていません。<br>';
+}
+?></dd>
                 <dt>2</dt><dd>モンスト</dd>
                 <dt>3</dt><dd>パズドラ</dd>
                 </dl>
                 <p>※kekkaはホームページで随時お知らせします。</p>
             </div>
 			</div>
-	<form action="../TOPPAGE/TOP.html" method="post">
-						
-					      <p class="submit2"><input type="submit" name="submit2" value="戻る"></p>
-					</form>
+            
+    </div>
+	
 	</main>
 	</body>
 </html>

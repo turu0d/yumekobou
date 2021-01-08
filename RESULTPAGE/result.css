@@ -45,53 +45,7 @@ main .title h1:after {
   height: 0;
 }
 
-.breadcrumb {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
 
-.breadcrumb li {
-  position: relative;
-  display: inline-block;/*横に並ぶように*/
-  list-style: none;
-  font-weight: bold;/*太字*/
-  margin-right: 0.3em;
-}
-.breadcrumb li:after {
-  content: "";
-  position: absolute;
-  top: 7px;
-  right: -19px;
-  border-style: solid;
-  border-color: transparent;
-  border-left-color: #feebcc;
-  border-width: 7px 12px;
-  width: 0;
-  height: 0;
-}
-
-.breadcrumb li a {
-  display: inline-block;
-  padding: 0 7px;
-  height: 28px;
-  line-height: 28px;
-  text-decoration: none;
-  color: #9b9b9b;
-  background: #feebcc;
-  font-size: 13px;
-  border-radius: 20px;
-  transition: 0.3s;
-}
-
-.breadcrumb li a:hover {
-  transform: translateY(-3px);
-}
-
-main .title{
-	
-	
-}
 
 main .title h1{
 	margin: 0;
@@ -116,11 +70,12 @@ main .title ol li:last-child::after {
     content: none;
 }
 
+/* 左の枠  */
+.left-column {
 
-.kensaku main .jouken {
-	width: 25%;
-	height: 500px;
-    padding: 0.5em 1em;
+  float: left;
+    width: 30%;
+    padding: 1em 1em;
     margin: 2em 0;
     font-weight: bold;
     color: #6091d3;/*文字色*/
@@ -128,7 +83,6 @@ main .title ol li:last-child::after {
     border: solid 3px #6091d3;/*線*/
     border-radius: 10px;/*角の丸み*/
 }
-
 
 
 .kensaku main .jouken table {
@@ -143,7 +97,7 @@ main .title ol li:last-child::after {
     border-collapse: collapse;
 }
 .kensaku main table td {
-    padding: 60px;
+    padding: 6px;
 }
 .kensaku main table th{
     background: #f7f0f0;
@@ -173,23 +127,12 @@ input[type="submit"]:hover{
   color: white;
 }
 
+/*  右の枠   */
+.right-column {
 
-
-.kensaku main .kekka {
-      width : 50px ;
-      height : 850px ;
-}
-
-.kensaku main .kekka{
-	position:relative;
-	bottom: 590px;
-		 float : right;
-}
-
-
-.kensaku main .kekka {
-	width: 60%;
-	height: 900px;
+  float: right;
+	float : right;
+	width: 750px;
     padding: 0.5em 1em;
     margin: 2em 0;
     font-weight: bold;
