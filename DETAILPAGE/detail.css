@@ -1,5 +1,20 @@
 @charset "UTF-8";
 
+body {
+	background-color: azure;
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+h1 {
+	margin: 0;
+	padding: 0;
+}
+
 header {
 	display: flex;
 }
@@ -10,7 +25,7 @@ header nav {
 
 header nav ul {
 	list-style-type: none;
-	margin: 0px 0;
+	margin: 0 0;
 	padding: 0;
 	display: flex;
 }
@@ -28,9 +43,8 @@ header nav ul li a:hover {
 	color: #888;
 }
 
-body {
-	padding: 20px 150px 20px 150px;
-	background-color: azure;
+main {
+	padding: 0 100px 0 100px;
 }
 
 /*タイトル*/
@@ -89,11 +103,33 @@ main table th {
 	background-color: darkkhaki;
 }
 
-/*文章*/
-p.submit {
-	text-align: center
+body footer {
+	margin-top: 20px;
+	padding: 5px;
+	position: relative;
+	color: #fff;
+	background-color: #161616;
 }
 
-.foot {
-	padding-top: 10px;
+#footera:link,
+#footera:visited,
+#footera:hover,
+#footera:active {
+	color: #fff;
+}
+
+#footerh1,
+#footerp {
+	margin: 0;
+	padding: 0;
+}
+
+footer .left {
+	padding: 0;
+	margin: 0;
+}
+
+.clearfix {
+    display: block;
+    min-height: 1%;
 }

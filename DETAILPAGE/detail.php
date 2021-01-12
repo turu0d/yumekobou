@@ -54,7 +54,7 @@ try{
 
 		<div class="picture" style="float: left;">
 			<!-- 写真div要素-->
-			<img src="atami.jpg" alt=<?php echo $row['name']; ?> title=<?php echo $row['name']; ?> width="300" height="200" style="margin: 0 30 30 0">
+			<img src="atami.jpg" alt="<?php echo $row['name']; ?>" title="<?php echo $row['name']; ?>" width="300" height="200" style="margin: 0 30 30 0">
 		</div>
 
 		<div class="information" style="text-align: right;">
@@ -136,7 +136,29 @@ try{
 		<?php endforeach; ?>
 	</main>
 
-	<footer class="foot">
+	<footer>
+		<div class="foot">
+			<div class="left">
+				<a href="../TOPPAGE/TOP.html" id="footera">
+					<h1 id="footerh1">夢工房</h1>
+					<p id="footerp">誰もが利用できる温泉サイト。</p>
+				</a>
+			</div>
+
+			<ul class="clearfix">
+				<li class="member clearfix">
+					<div class="left">Member.</div>
+					<div class="right">
+						Shin Tsuruga
+						Hiroki Takeshita
+						Arimichi Hirao
+						Keisuke Kuroki
+						Toshiyuki Iwai
+						Shunsuke Asayama
+					</div>
+				</li>
+			</ul>
+		</div>
 		<small> &copy; 2020 yumekoubou All rights reserved</small>
 	</footer>
 </body>
