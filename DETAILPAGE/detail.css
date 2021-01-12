@@ -15,6 +15,10 @@ h1 {
 	padding: 0;
 }
 
+div {
+	display: block;
+}
+
 header {
 	display: flex;
 }
@@ -124,12 +128,33 @@ body footer {
 	padding: 0;
 }
 
-footer .left {
+.footertitle {
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.left {
 	padding: 0;
-	margin: 0;
+	margin-bottom: 100px;
+	float: left;
+	position: relative;
+	top: -4px;
+	width: 115px;
+	opacity: .5;
+}
+
+.right {
+	width: 352px;
+	list-style: none outside;
+	column-count: 2;
 }
 
 .clearfix {
-    display: block;
-    min-height: 1%;
+	display: block;
+	min-height: 1%;
+}
+
+.underfoot {
+	border-top: 1px solid hsla(0, 0%, 100%, .1);
+	padding: 0 80px;
 }

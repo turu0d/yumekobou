@@ -137,29 +137,31 @@ try{
 	</main>
 
 	<footer>
-		<div class="foot">
-			<div class="left">
+		<div class="topfoot">
+			<div class="footertitle">
 				<a href="../TOPPAGE/TOP.html" id="footera">
 					<h1 id="footerh1">夢工房</h1>
 					<p id="footerp">誰もが利用できる温泉サイト。</p>
 				</a>
 			</div>
-
 			<ul class="clearfix">
 				<li class="member clearfix">
-					<div class="left">Member.</div>
-					<div class="right">
-						Shin Tsuruga
-						Hiroki Takeshita
-						Arimichi Hirao
-						Keisuke Kuroki
-						Toshiyuki Iwai
-						Shunsuke Asayama
-					</div>
+					<div class="left">Creators.</div>
+					<ul class="right">
+						<li>Shin Tsuruga</li>
+						<li>Arimichi Hirao</li>
+						<li>Hiroki Takeshita</li>
+						<li>Keisuke Kuroki</li>
+						<li>Toshiyuki Iwai</li>
+						<li>Shunsuke Asayama</li>
+					</ul>
 				</li>
 			</ul>
 		</div>
-		<small> &copy; 2020 yumekoubou All rights reserved</small>
+
+		<div class="underfoot">
+			<p style="text-align: center;">&copy; 2020 yumekoubou All rights reserved</p>
+		</div>
 	</footer>
 </body>
 
