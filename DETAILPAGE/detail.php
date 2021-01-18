@@ -1,19 +1,17 @@
 <?php
-
-	$dsn = 'mysql:dbname=onsen_db;host=localhost;charset=utf8'; //MySQLのonsen_dbというデータベースに接続。文字エンコーディングの指定。
-	$user = 'root';
-	$password = '';
-	$dbh = new PDO($dsn, $user, $password);
+	$dsn = 'mysql:host=database-2.cnjcx8ih0byc.ap-northeast-1.rds.amazonaws.com;dbname=onsen_db;charset=utf8';//MySQLのonsen_dbというデータベースに接続。文字エンコーディングの指定。
+	$user = 'admin';
+	$pass = 'rootroot1';
+	$dbh = new PDO($dsn, $user, $pass);
 	$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); //PDOのエラーレポートの表示。 PDO::ATTR_ERRMODEという属性でPDO::ERRMODE_EXCEPTIONの値を設定することでエラーが発生したときに、PDOExceptionの例外を投げてくれます。
 
 try{
-	$sql = 'SELECT * FROM onsen_info_tb';
+	$sql = 'SELECT * FROM onsen_info_tb WHERE id=10';
 	$stmt = $dbh->prepare($sql);
 	$stmt->execute();
 	while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
 		$data[] = $row;
 	}
-	
 	} catch (PDOException $e){
 			echo($e->getMessage());
 			die();
@@ -54,12 +52,12 @@ try{
 
 		<div class="picture" style="float: left;">
 			<!-- 写真div要素-->
-			<img src="atami.jpg" alt="<?php echo $row['name']; ?>" title="<?php echo $row['name']; ?>" width="300" height="200" style="margin: 0 30 30 0">
+			<img src="<?php echo $row['image']; ?>" alt="<?php echo $row['name']; ?>" title="<?php echo $row['name']; ?>" width="300" height="200" style="margin: 0 30 30 0">
 		</div>
 
 		<div class="information" style="text-align: right;">
 			<!-- 電話番号、住所div要素-->
-			<p>TEL：<?php echo $row['TEL']; ?></p>
+			<p>TEL：<?php echo $row['tel']; ?></p>
 			<p>FAX：<?php echo $row['fax']; ?></p>
 			<p>住所：<?php echo $row['address']; ?></p>
 		</div>
