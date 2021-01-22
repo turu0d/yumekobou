@@ -2,6 +2,7 @@
 
 header {
     display: flex;
+	background: #
 }
 
 header nav {
@@ -21,37 +22,37 @@ header nav ul li a:visited {
     text-decoration: none;
     color: #000;
 }
-header nav ul li a:hover {
-    color: #888;
+
+header a {
+  position: relative;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+header a:before {
+  position: absolute;
+  bottom: 10px;
+  left: calc(50% - 30px);
+  width: 60px;
+  height: 2px;
+  content: '';
+  border-radius: 3px;
+  background: #F00;
 }
 
 
 main .title h1{
 	position: relative;
-  padding: 0.6em;
-  background: -webkit-repeating-linear-gradient(-45deg, #fff5df, #fff5df 4px,#ffe4b1 3px, #ffe4b1 8px);
-  background: repeating-linear-gradient(-45deg, #fff5df, #fff5df 4px,#ffe4b1 3px, #ffe4b1 8px);
+  padding: 0.4em;
   border-radius: 7px;
-  font-family: 'arial black';
-}
-main .title h1:after {
-  position: absolute;
-  content: '';
-  top: 100;
-  left: 30px;
-  border: 15px solid transparent;
-  border-top: 15px solid #ffebbe;
-  width: 0;
-  height: 0;
-}
-
-
-
-main .title h1{
+  font-family: 'Alegreya Sans SC', sans-serif;
 	margin: 0;
 	line-height: 1;
 	font-size: 45px;
+	text-align: center;
+	background: #CCCCCC;
 }
+
 
 main .title ol {
     list-style-type: none;
@@ -60,7 +61,7 @@ main .title ol {
     display: flex;
 }
 main .title ol li {
-    font-size: 13px;
+    font-size: 15px;
 }
 main .title ol li::after {
     content: ">";
@@ -69,6 +70,13 @@ main .title ol li::after {
 main .title ol li:last-child::after {
     content: none;
 }
+
+h2{
+	text-align: center;
+	color: #000;
+
+}
+
 
 /* 左の枠  */
 .left-column {
@@ -80,8 +88,6 @@ main .title ol li:last-child::after {
     font-weight: bold;
     color: #6091d3;/*文字色*/
     background: #FFF;
-    border: solid 3px #6091d3;/*線*/
-    border-radius: 10px;/*角の丸み*/
 }
 
 
@@ -131,12 +137,11 @@ input[type="submit"]:hover{
 .right-column {
 
   float: right;
-	float : right;
 	width: 750px;
     padding: 0.5em 1em;
     margin: 2em 0;
     font-weight: bold;
     background: #FFF;
-    border: solid 3px #6091d3;/*線*/
+    border: solid 1px #000000;/*線*/
     border-radius: 10px;/*角の丸み*/
 }
