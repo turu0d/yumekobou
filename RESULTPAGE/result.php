@@ -7,7 +7,12 @@
 		<link rel="stylesheet" href="result.css">
 	</head>
 <body class="kensaku">
-<header>
+
+
+<main>
+	<div class="title">
+		<h1>検索結果</h1>
+		<header>
 	<nav>
 		<ul>
 			<li><a href="../TOPPAGE/TOP.html">TOP</a></li>
@@ -15,10 +20,6 @@
 		</ul>
 	</nav>
 	</header>
-
-<main>
-	<div class="title">
-		<h1>検索結果</h1>
 		<ol>
 			<li><a href="../TOPPAGE/TOP.html">TOP</a></li>
 			<li>検索結果</li>
@@ -193,7 +194,7 @@ if (empty($_POST['in01'])){
             
 			<div class="kekka">
 				<div>
-                <h2>検索結果</h2>
+                <h3>検索結果</h3>
                 <dl>
                 <dt>1</dt><dd><?php
 if (isset($_POST['riyu'])) {
