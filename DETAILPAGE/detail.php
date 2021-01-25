@@ -1,13 +1,23 @@
 <?php
+
+	if(!isset($_POST['onsen'])){
+		http_response_code( 301 ) ;
+		header("Location: ../TOPPAGE/TOP.html");
+		exit ;
+	}
+
 	$dsn = 'mysql:host=database-2.cnjcx8ih0byc.ap-northeast-1.rds.amazonaws.com;dbname=onsen_db;charset=utf8';//MySQLのonsen_dbというデータベースに接続。文字エンコーディングの指定。
 	$user = 'admin';
 	$pass = 'rootroot1';
 	$dbh = new PDO($dsn, $user, $pass);
 	$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); //PDOのエラーレポートの表示。 PDO::ATTR_ERRMODEという属性でPDO::ERRMODE_EXCEPTIONの値を設定することでエラーが発生したときに、PDOExceptionの例外を投げてくれます。
 
+	$array = $_POST['onsen'];
+
 try{
-	$sql = 'SELECT * FROM onsen_info_tb WHERE id=10';
+	$sql = 'SELECT * FROM onsen_info_tb WHERE id = :id';
 	$stmt = $dbh->prepare($sql);
+	$stmt->bindValue(':id', $array, PDO::PARAM_STR);
 	$stmt->execute();
 	while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
 		$data[] = $row;
@@ -60,8 +70,9 @@ try{
 			<p>TEL：<?php echo $row['tel']; ?></p>
 			<p>FAX：<?php echo $row['fax']; ?></p>
 			<p>住所：<?php echo $row['address']; ?></p>
+			<p><a href="<?php echo $row['url']; ?>">公式サイトはこちら</a></p>
+			<p><a href="<?php echo $row['reserve_site_url']; ?>">予約サイトはこちら</a></p>
 		</div>
-
 		<div class="hyou" style="clear: both;">
 			<table border="1">
 				<caption>温泉情報</caption>

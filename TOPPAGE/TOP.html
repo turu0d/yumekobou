@@ -1,198 +1,234 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>温泉</title>
-		<link rel="stylesheet" href="TOP.css">
-	</head>
-<body class="home" >
-    
-    
+
+<head>
+	<meta charset="utf-8">
+	<title>温泉</title>
+	<link rel="stylesheet" href="TOP.css">
+</head>
+
+<body class="home">
+
+
 	<header>
-     <a id="title" href="TOP.html">
-		<h1>温泉サイト(仮)</h1>
-		<p>誰もが利用できる温泉サイト。</p>
-	</a>   
+		<a id="title" href="TOP.html">
+			<h1>温泉サイト(仮)</h1>
+			<p>誰もが利用できる温泉サイト。</p>
+		</a>
 	</header>
 
-<main>
-    
+	<main>
 
-	<div class="example">
-        
-        <img id="mypic" src="pics1.jpg" >
-            <script>
-            var pics_src = new Array("pics1.jpg","pics2.jpg","pics3.jpg");
-            var num = -1;
- 
-            slideshow_timer();
- 
-            function slideshow_timer(){
-                if (num == 2){
-                    num = 0;
-                } 
-                else {
-                    num ++;
-                }
-                document.getElementById("mypic").src=pics_src[num];
-                setTimeout("slideshow_timer()",5000); 
-            }
-            </script>
-        
-    </div>
-    
-  
-        
-    <div class="box3">
-    
-        
-    <div class="box1">
 
-	
-        <h2><a style="cursor:pointer;">▼ 特徴を選択(複数選択可能)</a></h2>
+		<div class="example">
 
-	</div>
-<form method="POST"action="../RESULTPAGE/result.php">
+			<img id="mypic" src="pics1.jpg">
+			<script>
+				var pics_src = new Array("pics1.jpg", "pics2.jpg", "pics3.jpg");
+				var num = -1;
 
-	<input type="checkbox" name="tokucho[]" value="大浴場">大浴場<br>
-	<input type="checkbox" name="tokucho[]" value="足湯">足湯<br>
-	<input type="checkbox" name="tokucho[]" value="露天風呂">露天風呂<br>
-	<input type="checkbox" name="tokucho[]" value="混浴">混浴<br>
-	<input type="checkbox" name="tokucho[]" value="夕食付">夕食付き<br>
-	
+				slideshow_timer();
 
-	<div class="box1">
-	
-        <h2><a style="cursor:pointer;">▼ エリアから選択(複数選択可能)</a></h2>
+				function slideshow_timer() {
+					if (num == 2) {
+						num = 0;
+					} else {
+						num++;
+					}
+					document.getElementById("mypic").src = pics_src[num];
+					setTimeout("slideshow_timer()", 5000);
+				}
 
-    </div>
-    
-    <div class="blocka">
-   
-	<input type="checkbox" name="riyu[]" value="北海道">北海道
-	<div id="area1" >
-	</div><br>
-	
-	<input type="checkbox" >東北
-<div id="area2" s>
-&ensp; <input type="checkbox" name="riyu[]" value="青森" class="zisage">青森
- <input type="checkbox" name="riyu[]" value="秋田" class="zisage">秋田
- <input type="checkbox" name="riyu[]" value="岩手" class="zisage">岩手
- <input type="checkbox" name="riyu[]" value="山形" class="zisage">山形
- <input type="checkbox" name="riyu[]" value="宮城" class="zisage">宮城
- <input type="checkbox" name="riyu[]" value="福島" class="zisage">福島
-</div><br>
+			</script>
 
-	<input type="checkbox" >関東
-	<div id="area3" >
-&ensp; <input type="checkbox" name="riyu[]" value="群馬">群馬
- <input type="checkbox" name="riyu[]" value="栃木">栃木
- <input type="checkbox" name="riyu[]" value="茨城">茨城
- <input type="checkbox" name="riyu[]" value="千葉">千葉
- <input type="checkbox" name="riyu[]" value="埼玉">埼玉
- <input type="checkbox" name="riyu[]" value="東京">東京
- <input type="checkbox" name="riyu[]" value="神奈川">神奈川
-	</div><br>
+		</div>
 
-		
-	<input type="checkbox" >中部・東海
-	<div id="area4" >
-&ensp; <input type="checkbox" name="riyu[]" value="長野">長野
- <input type="checkbox" name="riyu[]" value="山梨">山梨
- <input type="checkbox" name="riyu[]" value="静岡">静岡
- <input type="checkbox" name="riyu[]" value="愛知">愛知
- <input type="checkbox" name="riyu[]" value="岐阜">岐阜
- <input type="checkbox" name="riyu[]" value="三重">三重
-		</div><br>
-		
-	<input type="checkbox" >北陸
-	<div id="area5" >
-&ensp; <input type="checkbox" name="riyu[]" value="新潟">新潟
- <input type="checkbox" name="riyu[]" value="富山">富山
- <input type="checkbox" name="riyu[]" value="石川">石川
- <input type="checkbox" name="riyu[]" value="福井">福井
-		</div><br>
 
-    </div>
-<div class="blockb">
 
-	<input type="checkbox" >近畿
-	<div id="area6" >
-&ensp; <input type="checkbox" name="riyu[]" value="滋賀">滋賀
- <input type="checkbox" name="riyu[]" value="奈良">奈良
- <input type="checkbox" name="riyu[]" value="京都">京都
- <input type="checkbox" name="riyu[]" value="大阪">大阪
- <input type="checkbox" name="riyu[]" value="和歌山">和歌山
- <input type="checkbox" name="riyu[]" value="兵庫">兵庫
-		</div><br>
-	
-	<input type="checkbox" >中国
-	<div id="area7" >
-&ensp; <input type="checkbox" name="riyu[]" value="鳥取">鳥取
- <input type="checkbox" name="riyu[]" value="岡山">岡山
- <input type="checkbox" name="riyu[]" value="島根">島根
- <input type="checkbox" name="riyu[]" value="広島">広島
- <input type="checkbox" name="riyu[]" value="山口">山口
-		</div><br>
-	
-		<input type="checkbox" >四国
-	<div id="area8" >
-&ensp; <input type="checkbox" name="riyu[]" value="香川">香川
- <input type="checkbox" name="riyu[]" value="徳島">徳島
- <input type="checkbox" name="riyu[]" value="高知">高知
- <input type="checkbox" name="riyu[]" value="愛媛">愛媛
-		</div><br>
-		
-		<input type="checkbox" >九州
-	<div id="area9" >
-&ensp; 
-<input type="checkbox" name="riyu[]" value="福岡">福岡
- <input type="checkbox" name="riyu[]" value="佐賀">佐賀
- <input type="checkbox" name="riyu[]" value="長崎">長崎
- <input type="checkbox" name="riyu[]" value="大分">大分
- <input type="checkbox" name="riyu[]" value="熊本">熊本
- <input type="checkbox" name="riyu[]" value="宮崎">宮崎
- <input type="checkbox" name="riyu[]" value="鹿児島">鹿児島
-		</div><br>
-		
-		<input type="checkbox" name="riyu[]" value="沖縄">沖縄<br>
-
-    </div>
-	
-<div class="box2">
-	<p>フリーワード検索</p>
-    </div>
-	<input type="textarea" name="in01" size="15" maxlength="20" placeholder="温泉名入力" class="box" value="">
-    <p><input type="submit"  value="検索する" class="a"></p>
-	
-	
-        </form>
-    
-<footer>
-<div class="foot">
-			<div class="left">
-				<a href="../TOPPAGE/TOP.html" id="footera">
-					<h1 id="footerh1">夢工房</h1>
-					<p id="footerp">誰もが利用できる温泉サイト。</p>
-				</a>
+			<form method="POST" action="../RESULTPAGE/result.php">
+			<div class="box1">
+				<h2>▼ 特徴を選択(複数選択可能)</h2>
 			</div>
 
-			<ul class="clearfix">
-				<li class="member clearfix">
-					<div class="left">Member.</div>
-					<div class="right">
-						Shin Tsuruga
-						Hiroki Takeshita
-						Arimichi Hirao
-						Keisuke Kuroki
-						Toshiyuki Iwai
-						Shunsuke Asayama
+					<div class="blocka">
+						<h3>泉質</h3>
+						<div id="toku1">
+							&ensp;
+							<input type="checkbox" name="tokucho[]" value="単純温泉">単純温泉
+							<input type="checkbox" name="tokucho[]" value="塩化物泉">塩化物泉
+							<input type="checkbox" name="tokucho[]" value="硫黄泉">硫黄泉
+							<input type="checkbox" name="tokucho[]" value="硫酸塩泉">硫酸塩泉
+							<input type="checkbox" name="tokucho[]" value="炭酸水素塩泉">炭酸水素塩泉
+							<input type="checkbox" name="tokucho[]" value="放射能泉">放射能泉
+						</div><br>
+						
+						<h3>温泉の色</h3>
+						<div id="toku2">
+							&ensp;
+							<input type="checkbox" name="tokucho[]" value="無色透明">無色透明
+							<input type="checkbox" name="tokucho[]" value="白色">白
+							<input type="checkbox" name="tokucho[]" value="赤褐色">赤褐色
+							<input type="checkbox" name="tokucho[]" value="黄褐色">黄褐色
+							<input type="checkbox" name="tokucho[]" value="緑色">緑
+							<input type="checkbox" name="tokucho[]" value="茶褐色">茶褐色
+							<input type="checkbox" name="tokucho[]" value="乳白色">乳白色
+							<input type="checkbox" name="tokucho[]" value="青色">青
+						</div><br>
+				
+						<h3>日帰り入浴</h3>
+						<div id="toku3">
+							&ensp;
+							<input type="checkbox" name="tokucho[]" value="可">あり
+							<input type="checkbox" name="tokucho[]" value="否">なし
+						</div><br>
 					</div>
-				</li>
-			</ul>
-		</div>
-		<small> &copy; 2020 yumekoubou All rights reserved</small>
-	</footer>
-    </main>
-    </body>
+						
+					<div class="blockb">
+						<h3>素泊まり</h3>
+						<div id="toku4">
+							&ensp;
+							<input type="checkbox" name="tokucho[]" value="可">あり
+							<input type="checkbox" name="tokucho[]" value="不可">なし
+						</div><br>
+
+						<h3>1名宿泊</h3>
+						<div id="toku5">
+							&ensp;
+							<input type="checkbox" name="tokucho[]" value="可">あり
+							<input type="checkbox" name="tokucho[]" value="不可">なし
+						</div><br>
+	
+						<h3>掛け流し</h3>
+						<div id="toku6">
+							&ensp;
+							<input type="checkbox" name="tokucho[]" value="有">あり
+							<input type="checkbox" name="tokucho[]" value="無">なし
+						</div><br>
+					</div>
+
+
+				<div class="box1">
+					<h2>▼ エリアから選択(複数選択可能)</h2>
+				</div>
+
+				<div class="blocka">
+					<div id="area1">
+					</div><br>
+
+					<h3>北海道・東北</h3>
+					<div id="area2">
+						&ensp; <input type="checkbox" name="riyu[]" value="北海道">北海道
+						<input type="checkbox" name="riyu[]" value="青森" class="zisage">青森
+						<input type="checkbox" name="riyu[]" value="秋田" class="zisage">秋田
+						<input type="checkbox" name="riyu[]" value="岩手" class="zisage">岩手
+						<input type="checkbox" name="riyu[]" value="山形" class="zisage">山形
+						<input type="checkbox" name="riyu[]" value="宮城" class="zisage">宮城
+						<input type="checkbox" name="riyu[]" value="福島" class="zisage">福島
+					</div><br>
+
+					<h3>関東</h3>
+					<div id="area3">
+						&ensp; <input type="checkbox" name="riyu[]" value="群馬">群馬
+						<input type="checkbox" name="riyu[]" value="栃木">栃木
+						<input type="checkbox" name="riyu[]" value="茨城">茨城
+						<input type="checkbox" name="riyu[]" value="千葉">千葉
+						<input type="checkbox" name="riyu[]" value="埼玉">埼玉
+						<input type="checkbox" name="riyu[]" value="東京">東京
+						<input type="checkbox" name="riyu[]" value="神奈川">神奈川
+					</div><br>
+
+
+					<h3>中部・東海</h3>
+					<div id="area4">
+						&ensp; <input type="checkbox" name="riyu[]" value="長野">長野
+						<input type="checkbox" name="riyu[]" value="山梨">山梨
+						<input type="checkbox" name="riyu[]" value="静岡">静岡
+						<input type="checkbox" name="riyu[]" value="愛知">愛知
+						<input type="checkbox" name="riyu[]" value="岐阜">岐阜
+						<input type="checkbox" name="riyu[]" value="三重">三重
+					</div><br>
+
+					<h3>北陸</h3>
+					<div id="area5">
+						&ensp; <input type="checkbox" name="riyu[]" value="新潟">新潟
+						<input type="checkbox" name="riyu[]" value="富山">富山
+						<input type="checkbox" name="riyu[]" value="石川">石川
+						<input type="checkbox" name="riyu[]" value="福井">福井
+					</div><br>
+
+				</div>
+				<div class="blockb">
+
+					<h3>近畿</h3>
+					<div id="area6">
+						&ensp; <input type="checkbox" name="riyu[]" value="滋賀">滋賀
+						<input type="checkbox" name="riyu[]" value="奈良">奈良
+						<input type="checkbox" name="riyu[]" value="京都">京都
+						<input type="checkbox" name="riyu[]" value="大阪">大阪
+						<input type="checkbox" name="riyu[]" value="和歌山">和歌山
+						<input type="checkbox" name="riyu[]" value="兵庫">兵庫
+					</div><br>
+
+					<h3>中国</h3>
+					<div id="area7">
+						&ensp; <input type="checkbox" name="riyu[]" value="鳥取">鳥取
+						<input type="checkbox" name="riyu[]" value="岡山">岡山
+						<input type="checkbox" name="riyu[]" value="島根">島根
+						<input type="checkbox" name="riyu[]" value="広島">広島
+						<input type="checkbox" name="riyu[]" value="山口">山口
+					</div><br>
+
+					<h3>四国</h3>
+					<div id="area8">
+						&ensp; <input type="checkbox" name="riyu[]" value="香川">香川
+						<input type="checkbox" name="riyu[]" value="徳島">徳島
+						<input type="checkbox" name="riyu[]" value="高知">高知
+						<input type="checkbox" name="riyu[]" value="愛媛">愛媛
+					</div><br>
+
+					<h3>九州</h3>
+					<div id="area9">
+						&ensp;
+						<input type="checkbox" name="riyu[]" value="福岡">福岡
+						<input type="checkbox" name="riyu[]" value="佐賀">佐賀
+						<input type="checkbox" name="riyu[]" value="長崎">長崎
+						<input type="checkbox" name="riyu[]" value="大分">大分
+						<input type="checkbox" name="riyu[]" value="熊本">熊本
+						<input type="checkbox" name="riyu[]" value="宮崎">宮崎
+						<input type="checkbox" name="riyu[]" value="鹿児島">鹿児島
+						<input type="checkbox" name="riyu[]" value="沖縄">沖縄
+					</div><br>
+						
+				</div>
+
+				<div class="tes"><input type="submit" value="検索する" class="search"><div>
+			</form>
+	</main>
+			<footer>
+				<div class="foot">
+					<div class="left">
+						<a href="../TOPPAGE/TOP.html" id="footera">
+							<h1 id="footerh1">夢工房</h1>
+							<p id="footerp">誰もが利用できる温泉サイト。</p>
+						</a>
+					</div>
+
+					<ul class="clearfix">
+						<li class="member clearfix">
+							<div class="left">Member.</div>
+							<div class="right">
+								Shin Tsuruga
+								Hiroki Takeshita
+								Arimichi Hirao
+								Keisuke Kuroki
+								Toshiyuki Iwai
+								Shunsuke Asayama
+							</div>
+						</li>
+					</ul>
+				</div>
+				<small> &copy; 2020 yumekoubou All rights reserved</small>
+			</footer>
+</body>
+
 </html>
