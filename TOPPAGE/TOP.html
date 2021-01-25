@@ -9,7 +9,7 @@
     
     
 	<header>
-     <a id="title" href="https://nipponia-kosuge.jp/">
+     <a id="title" href="TOP.html">
 		<h1>温泉サイト(仮)</h1>
 		<p>誰もが利用できる温泉サイト。</p>
 	</a>   
@@ -48,41 +48,33 @@
         
     <div class="box1">
 
-	<span onclick="obj=document.getElementById('open1').style; obj.display=
-(obj.display=='none')?'block':'none';">
-<a style="cursor:pointer;">▼ 特徴を選択(複数選択可能)</a>
+	
+        <h2><a style="cursor:pointer;">▼ 特徴を選択(複数選択可能)</a></h2>
 
-</span>
 	</div>
 <form method="POST"action="../RESULTPAGE/result.php">
-<ul>
-<!-- 折り畳まれる部分 -->
-<span class="open3">
-<span id="open1" style="display: none; clear: both;">
+
 	<input type="checkbox" name="tokucho[]" value="大浴場">大浴場<br>
 	<input type="checkbox" name="tokucho[]" value="足湯">足湯<br>
 	<input type="checkbox" name="tokucho[]" value="露天風呂">露天風呂<br>
 	<input type="checkbox" name="tokucho[]" value="混浴">混浴<br>
 	<input type="checkbox" name="tokucho[]" value="夕食付">夕食付き<br>
-	</span>
-    </span>
+	
 
 	<div class="box1">
-	<span onclick="obj=document.getElementById('open2').style; obj.display=
-(obj.display=='none')?'block':'none';">
-<a style="cursor:pointer;">▼ エリアから選択(複数選択可能)</a>
-</span>
+	
+        <h2><a style="cursor:pointer;">▼ エリアから選択(複数選択可能)</a></h2>
+
     </div>
-<ul>
-<!-- 折り畳まれる部分 -->
-<span class="open3">
-<span id="open2" style="display: none; clear: both;">
+    
+    <div class="blocka">
+   
 	<input type="checkbox" name="riyu[]" value="北海道">北海道
-	<div id="area1" style="display:none">
+	<div id="area1" >
 	</div><br>
 	
-	<input type="checkbox" onClick="a2.display=(this.checked?'':'none')">東北
-<div id="area2" style="display:none">
+	<input type="checkbox" >東北
+<div id="area2" s>
 &ensp; <input type="checkbox" name="riyu[]" value="青森" class="zisage">青森
  <input type="checkbox" name="riyu[]" value="秋田" class="zisage">秋田
  <input type="checkbox" name="riyu[]" value="岩手" class="zisage">岩手
@@ -91,8 +83,8 @@
  <input type="checkbox" name="riyu[]" value="福島" class="zisage">福島
 </div><br>
 
-	<input type="checkbox" onClick="a3.display=(this.checked?'':'none')">関東
-	<div id="area3" style="display:none">
+	<input type="checkbox" >関東
+	<div id="area3" >
 &ensp; <input type="checkbox" name="riyu[]" value="群馬">群馬
  <input type="checkbox" name="riyu[]" value="栃木">栃木
  <input type="checkbox" name="riyu[]" value="茨城">茨城
@@ -103,8 +95,8 @@
 	</div><br>
 
 		
-	<input type="checkbox" onClick="a4.display=(this.checked?'':'none')">中部・東海
-	<div id="area4" style="display:none">
+	<input type="checkbox" >中部・東海
+	<div id="area4" >
 &ensp; <input type="checkbox" name="riyu[]" value="長野">長野
  <input type="checkbox" name="riyu[]" value="山梨">山梨
  <input type="checkbox" name="riyu[]" value="静岡">静岡
@@ -113,17 +105,19 @@
  <input type="checkbox" name="riyu[]" value="三重">三重
 		</div><br>
 		
-	<input type="checkbox" onClick="a5.display=(this.checked?'':'none')">北陸
-	<div id="area5" style="display:none">
+	<input type="checkbox" >北陸
+	<div id="area5" >
 &ensp; <input type="checkbox" name="riyu[]" value="新潟">新潟
  <input type="checkbox" name="riyu[]" value="富山">富山
  <input type="checkbox" name="riyu[]" value="石川">石川
  <input type="checkbox" name="riyu[]" value="福井">福井
 		</div><br>
 
-	
-	<input type="checkbox" onClick="a6.display=(this.checked?'':'none')">近畿
-	<div id="area6" style="display:none">
+    </div>
+<div class="blockb">
+
+	<input type="checkbox" >近畿
+	<div id="area6" >
 &ensp; <input type="checkbox" name="riyu[]" value="滋賀">滋賀
  <input type="checkbox" name="riyu[]" value="奈良">奈良
  <input type="checkbox" name="riyu[]" value="京都">京都
@@ -132,8 +126,8 @@
  <input type="checkbox" name="riyu[]" value="兵庫">兵庫
 		</div><br>
 	
-	<input type="checkbox" onClick="a7.display=(this.checked?'':'none')">中国
-	<div id="area7" style="display:none">
+	<input type="checkbox" >中国
+	<div id="area7" >
 &ensp; <input type="checkbox" name="riyu[]" value="鳥取">鳥取
  <input type="checkbox" name="riyu[]" value="岡山">岡山
  <input type="checkbox" name="riyu[]" value="島根">島根
@@ -141,16 +135,16 @@
  <input type="checkbox" name="riyu[]" value="山口">山口
 		</div><br>
 	
-		<input type="checkbox" onClick="a8.display=(this.checked?'':'none')">四国
-	<div id="area8" style="display:none">
+		<input type="checkbox" >四国
+	<div id="area8" >
 &ensp; <input type="checkbox" name="riyu[]" value="香川">香川
  <input type="checkbox" name="riyu[]" value="徳島">徳島
  <input type="checkbox" name="riyu[]" value="高知">高知
  <input type="checkbox" name="riyu[]" value="愛媛">愛媛
 		</div><br>
 		
-		<input type="checkbox" onClick="a9.display=(this.checked?'':'none')">九州
-	<div id="area9" style="display:none">
+		<input type="checkbox" >九州
+	<div id="area9" >
 &ensp; 
 <input type="checkbox" name="riyu[]" value="福岡">福岡
  <input type="checkbox" name="riyu[]" value="佐賀">佐賀
@@ -163,32 +157,16 @@
 		
 		<input type="checkbox" name="riyu[]" value="沖縄">沖縄<br>
 
-	<script language="javascript">
-a1=document.getElementById('area1').style
-a2=document.getElementById('area2').style
-a3=document.getElementById('area3').style
-a4=document.getElementById('area4').style
-a5=document.getElementById('area5').style
-a6=document.getElementById('area6').style
-a7=document.getElementById('area7').style
-a8=document.getElementById('area8').style
-a9=document.getElementById('area9').style
-	</script>
-	</span>
-    </span>
+    </div>
 	
 <div class="box2">
 	<p>フリーワード検索</p>
     </div>
 	<input type="textarea" name="in01" size="15" maxlength="20" placeholder="温泉名入力" class="box" value="">
     <p><input type="submit"  value="検索する" class="a"></p>
-	</ul>
 	
-
-    </ul>
-	</form>
-        
-    </div>
+	
+        </form>
     
 <footer>
 <div class="foot">
