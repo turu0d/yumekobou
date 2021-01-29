@@ -1,51 +1,52 @@
 @charset "UTF-8";
 
 header {
-    display: flex;
+	display: flex;
 	background: #
 }
 
 header nav {
-    margin: 0 0 0 auto;
+	margin: 0 0 0 auto;
 }
+
 header nav ul {
-    list-style-type: none;
-    margin: 0px 0;
-    padding: 0;
-    display: flex;
+	list-style-type: none;
+	margin: 0px 0;
+	padding: 0;
+	display: flex;
 }
+
 header nav ul li a,
 header nav ul li a:link,
 header nav ul li a:visited {
-    display: block;
-    padding: 10px 15px;
-    text-decoration: none;
-    color: #000;
+	display: block;
+	padding: 10px 15px;
+	text-decoration: none;
+	color: #000;
 }
 
 header a {
-  position: relative;
-  padding: 1.5rem;
-  text-align: center;
+	position: relative;
+	padding: 1.5rem;
+	text-align: center;
 }
 
 header a:before {
-  position: absolute;
-  bottom: 10px;
-  left: calc(50% - 30px);
-  width: 60px;
-  height: 2px;
-  content: '';
-  border-radius: 3px;
-  background: #F00;
+	position: absolute;
+	bottom: 10px;
+	left: calc(50% - 30px);
+	width: 60px;
+	height: 2px;
+	content: '';
+	border-radius: 3px;
+	background: #F00;
 }
 
-
-main .title h1{
+main .title h1 {
 	position: relative;
-  padding: 0.4em;
-  border-radius: 7px;
-  font-family: 'Alegreya Sans SC', sans-serif;
+	padding: 0.4em;
+	border-radius: 7px;
+	font-family: 'Alegreya Sans SC', sans-serif;
 	margin: 0;
 	line-height: 1;
 	font-size: 45px;
@@ -53,95 +54,106 @@ main .title h1{
 	background: #CCCCCC;
 }
 
-
 main .title ol {
-    list-style-type: none;
-    margin: 20px 0 0;
-    padding: 0;
-    display: flex;
-}
-main .title ol li {
-    font-size: 15px;
-}
-main .title ol li::after {
-    content: ">";
-    margin: 0 5px 0 10px;
-}
-main .title ol li:last-child::after {
-    content: none;
+	list-style-type: none;
+	margin: 20px 0 0;
+	padding: 0;
+	display: flex;
 }
 
-h2{
+main .title ol li {
+	font-size: 15px;
+}
+
+main .title ol li::after {
+	content: ">";
+	margin: 0 5px 0 10px;
+}
+
+main .title ol li:last-child::after {
+	content: none;
+}
+
+h2 {
 	text-align: center;
 	color: #000;
-
 }
-
 
 /* 左の枠  */
 .left-column {
-
-  float: left;
-    width: 30%;
-    padding: 1em 1em;
-    margin: 2em 0;
-    font-weight: bold;
-    color: #6091d3;/*文字色*/
-    background: #FFF;
+	float: left;
+	width: 30%;
+	padding: 1em 1em;
+	margin: 2em 0;
+	font-weight: bold;
+	color: #6091d3;
+	/*文字色*/
+	background: #FFF;
 }
-
 
 .kensaku main .jouken table {
-    width: 90%;
+	width: 90%;
 	height: 70px;
-    text-align: center;
+	text-align: center;
 }
+
 .kensaku main table,
 .kensaku main table th,
 .kensaku main table td {
-    border: solid 1px #ccc;
-    border-collapse: collapse;
+	border: solid 1px #ccc;
+	border-collapse: collapse;
 }
+
 .kensaku main table td {
-    padding: 6px;
-}
-.kensaku main table th{
-    background: #f7f0f0;
-    color: #cd853f;
+	padding: 6px;
 }
 
+.kensaku main table th {
+	background: #f7f0f0;
+	color: #cd853f;
+}
 
-
-
-
-p.submit{
+p.submit {
 	text-align: center
 }
 
-input[type="submit"]{
+input[type="submit"] {
 	display: inline-block;
-  padding: 0.3em 1em;
-  text-decoration: none;
-  color: #67c5ff;
-  border: solid 2px #67c5ff;
-  border-radius: 3px;
-  transition: .4s;
+	padding: 0.3em 1em;
+	text-decoration: none;
+	color: #67c5ff;
+	border: solid 2px #67c5ff;
+	border-radius: 3px;
+	transition: .4s;
 	cursor: pointer;
 }
-input[type="submit"]:hover{
+
+input[type="submit"]:hover {
 	background: #67c5ff;
-  color: white;
+	color: white;
 }
 
 /*  右の枠   */
 .right-column {
-
-  float: right;
+	float: right;
 	width: 750px;
-    padding: 0.5em 1em;
-    margin: 2em 0;
-    font-weight: bold;
-    background: #FFF;
-    border: solid 1px #000000;/*線*/
-    border-radius: 10px;/*角の丸み*/
+	padding: 0.5em 1em;
+	margin: 2em 0;
+	font-weight: bold;
+	background: #FFF;
+	border: solid 1px #000000;
+	/*線*/
+	border-radius: 10px;
+	/*角の丸み*/
+}
+
+/* 検索結果一覧 */
+.kekka{
+	width: 100%;
+	text-align: center;
+}
+
+.oneOfKekka{
+	display: inline-block;
+	padding: 0px 100px 10px 100px;
 }

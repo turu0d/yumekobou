@@ -329,27 +329,24 @@ if (isset($_POST['tokucho'])) {
 		<div class="right-column">
 
 			<div class="kekka">
-				<div>
 					<h2>検索結果</h2>
-					<dl>
 						<?php
 							for($a=0; $a<5; $a++){
 								if(empty($miseru[$a]['name']) OR empty($miseru[$a]['prefecture']) OR empty($miseru[$a]['id'])){
 									break;
 								}
 								$no = $a + 1;
-								echo "<dt>{$no}.</dt>";
-								echo "<dd>";
-								echo '<form method="post" name="form'."{$a}".'" action="../DETAILPAGE/detail.php">';
-								echo "{$miseru[$a]['name']} ({$miseru[$a]['prefecture']})";
-								echo '<input type="hidden" name="onsen"'." value='{$miseru[$a]["id"]}'>";
+								echo '<div class="oneOfKekka">';
+								echo '<div><form method="post" name="form'."{$a}".'" action="../DETAILPAGE/detail.php">';
+								echo "{$no}. {$miseru[$a]['name']} ({$miseru[$a]['prefecture']})</div>";
+								
+								echo '<div><input type="hidden" name="onsen"'." value='{$miseru[$a]["id"]}'>";
 								echo '<a href="#" onclick="document.form'."{$a}".'.submit();">';
 								echo "<img src={$miseru[$a]["image"]}".' width="250px" height="190px">';
-								echo '</img></a></form>';
+								echo '</img></a></form></div>';
+								echo '</div>';
 							}
 						?>
-					</dl>
-				</div>
 			</div>
 		</div>
 
