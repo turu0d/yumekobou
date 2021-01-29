@@ -70,8 +70,8 @@ try{
 			<p>TEL：<?php echo $row['tel']; ?></p>
 			<p>FAX：<?php echo $row['fax']; ?></p>
 			<p>住所：<?php echo $row['address']; ?></p>
-			<p><a href="<?php echo $row['url']; ?>">公式サイトはこちら</a></p>
-			<p><a href="<?php echo $row['reserve_site_url']; ?>">予約サイトはこちら</a></p>
+			<p><a href="<?php echo $row['url']; ?>"target="_blank" rel="noopener noreferrer">公式サイトはこちら</a></p>
+			<p><a href="<?php echo $row['reserve_site_url']; ?>" target="_blank" rel="noopener noreferrer">予約サイトはこちら</a></p>
 		</div>
 		<div class="hyou" style="clear: both;">
 			<table border="1">
