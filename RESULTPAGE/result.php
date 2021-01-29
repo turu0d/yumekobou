@@ -1,5 +1,4 @@
 <?php
-
 	if(!isset($_POST['riyu']) OR !isset($_POST['tokucho'])){
 		http_response_code( 301 ) ;
 		header("Location: ../TOPPAGE/TOP.html");
@@ -12,12 +11,13 @@
 	$dbh = new PDO($dsn, $user, $pass);
 	$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); //PDOのエラーレポートの表示。 PDO::ATTR_ERRMODEという属性でPDO::ERRMODE_EXCEPTIONの値を設定することでエラーが発生したときに、PDOExceptionの例外を投げてくれます。
 	
-	$point = array();
-	$data = array();
-	$miseru = array();
-	$riyu = $_POST['riyu'];
-	$tokucho = $_POST['tokucho'];
-	$i = 0;
+	$tokuchoCount = count($_POST['tokucho']); //ユーザーが選択した特徴の数
+	$point = array(); //一致した件数を格納する配列
+	$data = array(); //RDSから都道府県絞り込みでSELECT実行した結果を格納する配列
+	$miseru = array(); //表示するための配列
+	$riyu = $_POST['riyu']; //ユーザーが選択した都道府県を格納
+	$tokucho = $_POST['tokucho']; //ユーザーが選択した特徴を格納
+	$i = 0; //一致した件数をカウントする変数
 	
 	//都道府県追加
 	for($i=0; $i<count($riyu); $i++){
@@ -81,13 +81,13 @@
 			}
 		}
 
-function sortByKey($key_name, $sort_order, $array) {
+	function sortByKey($key_name, $sort_order, $array) {
     foreach ($array as $key => $value) {
         $standard_key_array[$key] = $value[$key_name];
     }
     array_multisort($standard_key_array, $sort_order, $array);
     return $array;
-}
+	}
 
 
 ?>
@@ -250,69 +250,69 @@ if (isset($_POST['tokucho'])) {
     echo 'チェックされていません。<br>';
 }
 ?>
-									<ul>
-										<input type="checkbox" onClick="b1.display=(this.checked?'':'none')">泉質
-										<div id="toku1" style="display:none">
-											&ensp;
-											<input type="checkbox" name="tokucho[]" value="単純温泉">単純温泉
-											<input type="checkbox" name="tokucho[]" value="塩化物泉">塩化物泉
-											<input type="checkbox" name="tokucho[]" value="硫黄泉">硫黄泉
-											<input type="checkbox" name="tokucho[]" value="硫酸塩泉">硫酸塩泉
-											<input type="checkbox" name="tokucho[]" value="炭酸水素塩泉">炭酸水素塩泉
-											<input type="checkbox" name="tokucho[]" value="放射能泉">放射能泉
-										</div><br>
+						<ul>
+							<input type="checkbox" onClick="b1.display=(this.checked?'':'none')">泉質
+							<div id="toku1" style="display:none">
+								&ensp;
+								<input type="checkbox" name="tokucho[]" value="単純温泉">単純温泉
+								<input type="checkbox" name="tokucho[]" value="塩化物泉">塩化物泉
+								<input type="checkbox" name="tokucho[]" value="硫黄泉">硫黄泉
+								<input type="checkbox" name="tokucho[]" value="硫酸塩泉">硫酸塩泉
+								<input type="checkbox" name="tokucho[]" value="炭酸水素塩泉">炭酸水素塩泉
+								<input type="checkbox" name="tokucho[]" value="放射能泉">放射能泉
+							</div><br>
 
-										<input type="checkbox" onClick="b2.display=(this.checked?'':'none')">温泉の色
-										<div id="toku2" style="display:none">
-											&ensp;
-											<input type="checkbox" name="tokucho[]" value="無色透明">無色透明
-											<input type="checkbox" name="tokucho[]" value="白色">白
-											<input type="checkbox" name="tokucho[]" value="赤褐色">赤褐色
-											<input type="checkbox" name="tokucho[]" value="黄褐色">黄褐色
-											<input type="checkbox" name="tokucho[]" value="緑色">緑
-											<input type="checkbox" name="tokucho[]" value="茶褐色">茶褐色
-											<input type="checkbox" name="tokucho[]" value="乳白色">乳白色
-											<input type="checkbox" name="tokucho[]" value="青色">青
-										</div><br>
-
-
-										<input type="checkbox" onClick="b3.display=(this.checked?'':'none')">日帰り入浴
-										<div id="toku3" style="display:none">
-											<input type="checkbox" name="tokucho[]" value="可">あり
-											<input type="checkbox" name="tokucho[]" value="否">なし
-										</div><br>
-
-										<input type="checkbox" onClick="b4.display=(this.checked?'':'none')">素泊まり
-										<div id="toku4" style="display:none">
-											<input type="checkbox" name="tokucho[]" value="可">あり
-											<input type="checkbox" name="tokucho[]" value="不可">なし
-										</div><br>
+							<input type="checkbox" onClick="b2.display=(this.checked?'':'none')">温泉の色
+							<div id="toku2" style="display:none">
+								&ensp;
+								<input type="checkbox" name="tokucho[]" value="無色透明">無色透明
+								<input type="checkbox" name="tokucho[]" value="白色">白
+								<input type="checkbox" name="tokucho[]" value="赤褐色">赤褐色
+								<input type="checkbox" name="tokucho[]" value="黄褐色">黄褐色
+								<input type="checkbox" name="tokucho[]" value="緑色">緑
+								<input type="checkbox" name="tokucho[]" value="茶褐色">茶褐色
+								<input type="checkbox" name="tokucho[]" value="乳白色">乳白色
+								<input type="checkbox" name="tokucho[]" value="青色">青
+							</div><br>
 
 
-										<input type="checkbox" onClick="b5.display=(this.checked?'':'none')">1名宿泊
-										<div id="toku5" style="display:none">
-											&ensp;
-											<input type="checkbox" name="tokucho[]" value="可">あり
-											<input type="checkbox" name="tokucho[]" value="不可">なし
-										</div><br>
+							<input type="checkbox" onClick="b3.display=(this.checked?'':'none')">日帰り入浴
+							<div id="toku3" style="display:none">
+								<input type="checkbox" name="tokucho[]" value="可">あり
+								<input type="checkbox" name="tokucho[]" value="否">なし
+							</div><br>
 
-										<input type="checkbox" onClick="b6.display=(this.checked?'':'none')">掛け流し
-										<div id="toku6" style="display:none">
-											&ensp;
-											<input type="checkbox" name="tokucho[]" value="有">あり
-											<input type="checkbox" name="tokucho[]" value="無">なし
-										</div><br>
+							<input type="checkbox" onClick="b4.display=(this.checked?'':'none')">素泊まり
+							<div id="toku4" style="display:none">
+								<input type="checkbox" name="tokucho[]" value="可">あり
+								<input type="checkbox" name="tokucho[]" value="不可">なし
+							</div><br>
 
-										<script language="javascript">
-											b1 = document.getElementById('toku1').style
-											b2 = document.getElementById('toku2').style
-											b3 = document.getElementById('toku3').style
-											b4 = document.getElementById('toku4').style
-											b5 = document.getElementById('toku5').style
-											b6 = document.getElementById('toku6').style
 
-										</script>
-									</ul>
+							<input type="checkbox" onClick="b5.display=(this.checked?'':'none')">1名宿泊
+							<div id="toku5" style="display:none">
+								&ensp;
+								<input type="checkbox" name="tokucho[]" value="可">あり
+								<input type="checkbox" name="tokucho[]" value="不可">なし
+							</div><br>
+
+							<input type="checkbox" onClick="b6.display=(this.checked?'':'none')">掛け流し
+							<div id="toku6" style="display:none">
+								&ensp;
+								<input type="checkbox" name="tokucho[]" value="有">あり
+								<input type="checkbox" name="tokucho[]" value="無">なし
+							</div><br>
+
+							<script language="javascript">
+								b1 = document.getElementById('toku1').style
+								b2 = document.getElementById('toku2').style
+								b3 = document.getElementById('toku3').style
+								b4 = document.getElementById('toku4').style
+								b5 = document.getElementById('toku5').style
+								b6 = document.getElementById('toku6').style
+
+							</script>
+						</ul>
 						<p class="submit"><input type="submit" name="submit" value="再検索"></p>
 					</div>
 				</form>
@@ -329,16 +329,18 @@ if (isset($_POST['tokucho'])) {
 		<div class="right-column">
 
 			<div class="kekka">
-					<h2>検索結果</h2>
-						<?php
+				<h2>検索結果(最大５件表示)</h2>
+				<p>ユーザーが選択した特徴の数：<?php echo $tokuchoCount; ?> 件</p>
+				<?php
 							for($a=0; $a<5; $a++){
 								if(empty($miseru[$a]['name']) OR empty($miseru[$a]['prefecture']) OR empty($miseru[$a]['id'])){
 									break;
 								}
 								$no = $a + 1;
+								$probability = ($miseru[$a]['point'] / $tokuchoCount) * 100; //一致率
 								echo '<div class="oneOfKekka">';
 								echo '<div><form method="post" name="form'."{$a}".'" action="../DETAILPAGE/detail.php">';
-								echo "{$no}. {$miseru[$a]['name']} ({$miseru[$a]['prefecture']})</div>";
+								echo "{$no}. {$miseru[$a]['name']} ({$miseru[$a]['prefecture']}) (一致率：{$probability}%)</div>";
 								
 								echo '<div><input type="hidden" name="onsen"'." value='{$miseru[$a]["id"]}'>";
 								echo '<a href="#" onclick="document.form'."{$a}".'.submit();">';
