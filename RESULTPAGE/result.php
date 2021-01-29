@@ -332,39 +332,22 @@ if (isset($_POST['tokucho'])) {
 				<div>
 					<h2>検索結果</h2>
 					<dl>
-						<dt>1</dt>
-						<dd>
-							<form method="post" name="form1" action="../DETAILPAGE/detail.php">
-								<?php echo $miseru[0]["name"]." (".$miseru[0]["prefecture"].")"; ?>
-								<input type="hidden" name="onsen" value="<?php echo $miseru[0]["id"]; ?>">
-								<a href="#" onclick="document.form1.submit();">
-									<img src="<?php echo $miseru[0]["image"]; ?>" width="250px" height="190px">
-									</img>
-								</a>
-							</form>
-						</dd>
-						<dt>2</dt>
-						<dd>
-							<form method="post" name="form2" action="../DETAILPAGE/detail.php">
-								<?php echo $miseru[1]["name"]." (".$miseru[1]["prefecture"].")"; ?>
-								<input type="hidden" name="onsen" value="<?php echo $miseru[1]["id"]; ?>">
-								<a href="#" onclick="document.form2.submit();">
-									<img src="<?php echo $miseru[1]["image"]; ?>" width="250px" height="190px">
-									</img>
-								</a>
-							</form>
-						</dd>
-						<dt>3</dt>
-						<dd>
-							<form method="post" name="form3" action="../DETAILPAGE/detail.php">
-								<?php echo $miseru[2]["name"]." (".$miseru[2]["prefecture"].")"; ?>
-								<input type="hidden" name="onsen" value="<?php echo $miseru[2]["id"]; ?>">
-								<a href="#" onclick="document.form3.submit();">
-									<img src="<?php echo $miseru[2]["image"]; ?>" width="250px" height="190px">
-									</img>
-								</a>
-							</form>
-						</dd>
+						<?php
+							for($a=0; $a<5; $a++){
+								if(empty($miseru[$a]['name']) OR empty($miseru[$a]['prefecture']) OR empty($miseru[$a]['id'])){
+									break;
+								}
+								$no = $a + 1;
+								echo "<dt>{$no}.</dt>";
+								echo "<dd>";
+								echo '<form method="post" name="form'."{$a}".'" action="../DETAILPAGE/detail.php">';
+								echo "{$miseru[$a]['name']} ({$miseru[$a]['prefecture']})";
+								echo '<input type="hidden" name="onsen"'." value='{$miseru[$a]["id"]}'>";
+								echo '<a href="#" onclick="document.form'."{$a}".'.submit();">';
+								echo "<img src={$miseru[$a]["image"]}".' width="250px" height="190px">';
+								echo '</img></a></form>';
+							}
+						?>
 					</dl>
 				</div>
 			</div>
