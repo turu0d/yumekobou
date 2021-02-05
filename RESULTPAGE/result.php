@@ -86,12 +86,17 @@
 	//$data[]['point']基準で降順ソートし$arrayに結果を代入
 	$array = sortByKey('point', SORT_DESC, $data);
 
-	//$array[]['name'] or $array[]['prefecture']がnullの場合、それ以降のデータを表示しないようにする。結果は$miseruに代入。
+	//$array[]['point']>=1 かつ $array[]['name'] or $array[]['prefecture']がnot nullの要素を$miseruに代入
 	for($i=0; $i<count($array); $i++){
-		if(isset($array[$i]["name"]) AND isset($array[$i]["prefecture"])){
-			array_push($miseru, $array[$i]);
+		if($array[$i]["point"] >= 1){
+			if(isset($array[$i]["name"]) AND isset($array[$i]["prefecture"])){
+				array_push($miseru, $array[$i]);
+			}	
 		}
 	}
+
+$id_list = array_column( $miseru, 'point' );
+print_r($id_list);
 ?>
 <!DOCTYPE html>
 
@@ -333,7 +338,7 @@ if (isset($_POST['tokucho'])) {
 			<div class="kekka">
 					<h2>検索結果</h2>
 						<?php
-							for($a=0; $a<5; $a++){
+							for($a=0; $a<count($miseru); $a++){
 								if(empty($miseru[$a]['name']) OR empty($miseru[$a]['prefecture']) OR empty($miseru[$a]['id'])){
 									break;
 								}
