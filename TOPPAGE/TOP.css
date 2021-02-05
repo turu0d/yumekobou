@@ -1,18 +1,14 @@
 @charset "UTF-8";
 
-a {
-	text-decoration: none;
-}
 
-
-
-
+/*全体の配置*/
 body {
 	margin: 0;
 	padding: 0;
 	text-align: center;
 }
 
+/*ヘッダー設定*/
 header a#title {
     position: absolute;
     z-index: 10;
@@ -24,46 +20,21 @@ header a#title {
     margin-top: -20px;
     color: #fff;
 }
-header #mypic{
-
-}
-
-main .title ol {
-    list-style-type: none;
-    margin: 20px 0 0;
-    padding: 0;
-    display: flex;
-}
-main .title ol li {
-    font-size: 13px;
-}
-main .title ol li::after {
-    content: ">";
-    margin: 0 5px 0 10px;
-}
-main .title ol li:last-child::after {
-    content: none;
-}
-
-p.submit{
-	text-align: center
-}
 
 
-/*背景設定*/
+/*背景画像設定*/
 .example img {
     width: 100vw;
     height: 620px;/*親div*/
-  position: relative;
-    /*相対配置*/
-  }
+  position: relative;/*相対配置*/
+}
 
-.example .box3{
+.example .box3 {
   position: absolute;/*絶対配置*/
   color: white;/*文字は白に*/
   top: 0;
   left: 0;
-  }
+}
 
 main.example{
 width: 50px;
@@ -71,10 +42,14 @@ width: 50px;
     position: absolute;
     top: 0;
     z-index: 10;
-  }
+}
+
+/*サイト名の配置*/
+a {
+	text-decoration: none;
+}
 
 
-/*チェックボックス*/
 
 /*フリーワード検索*/
 .box2 p{
@@ -139,6 +114,7 @@ footer {
 }
 
 
+/*特徴・エリアの二行表示*/
 div.blocka {
    float: left;
    width: 50%; 
@@ -146,10 +122,6 @@ div.blocka {
 
 div.blockb {
 	margin-top: 40px;;
-}
-
-h2{
-    text-align: center;
 }
 
 
