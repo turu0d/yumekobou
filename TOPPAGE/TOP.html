@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 
+<!-- cssの適用 -->
 <head>
 	<meta charset="utf-8">
 	<title>温泉</title>
@@ -9,7 +10,7 @@
 
 <body class="home">
 
-
+<!-- ヘッダー -->
 	<header>
 		<a id="title" href="TOP.html">
 			<h1>温泉サイト(仮)</h1>
@@ -22,6 +23,7 @@
 
 		<div class="example">
 
+<!-- サイトを開いた時の画像設定 -->
 			<img id="mypic" src="pics1.jpg">
 			<script>
 				var pics_src = new Array("pics1.jpg", "pics2.jpg", "pics3.jpg");
@@ -44,8 +46,8 @@
 		</div>
 
 
-
-			<form method="POST" action="../RESULTPAGE/result.php">
+<!-- 特徴から選んだことを送信 -->
+			<form method="POST" target="_blank" action="../RESULTPAGE/result.php">
 			<div class="box1">
 				<h2>▼ 特徴を選択(複数選択可能)</h2>
 			</div>
@@ -107,6 +109,7 @@
 					</div>
 
 
+<!-- エリアから選んだことを送信 -->
 				<div class="box1">
 					<h2>▼ エリアから選択(複数選択可能)</h2>
 				</div>
@@ -201,9 +204,12 @@
 						
 				</div>
 
-				<div class="tes"><input type="submit" value="検索する" class="search"><div>
+<!-- 検索ボタンの設置 -->
+				<div class="tes"><input type="submit" value="検索する" class="search"></div>
 			</form>
 	</main>
+    
+<!-- フッター -->
 			<footer>
 				<div class="foot">
 					<div class="left">

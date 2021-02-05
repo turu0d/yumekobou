@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+/*ヘッダー*/
 header {
 	display: flex;
 	background: #
@@ -25,6 +26,7 @@ header nav ul li a:visited {
 	color: #000;
 }
 
+/*TOP・詳細*/
 header a {
 	position: relative;
 	padding: 1.5rem;
@@ -54,6 +56,7 @@ main .title h1 {
 	background: #CCCCCC;
 }
 
+/*パンくずリスト*/
 main .title ol {
 	list-style-type: none;
 	margin: 20px 0 0;
@@ -74,6 +77,7 @@ main .title ol li:last-child::after {
 	content: none;
 }
 
+/*選択した条件・検索結果*/
 h2 {
 	text-align: center;
 	color: #000;
@@ -91,28 +95,9 @@ h2 {
 	background: #FFF;
 }
 
-.kensaku main .jouken table {
-	width: 90%;
-	height: 70px;
-	text-align: center;
-}
 
-.kensaku main table,
-.kensaku main table th,
-.kensaku main table td {
-	border: solid 1px #ccc;
-	border-collapse: collapse;
-}
 
-.kensaku main table td {
-	padding: 6px;
-}
-
-.kensaku main table th {
-	background: #f7f0f0;
-	color: #cd853f;
-}
-
+/*再検索*/
 p.submit {
 	text-align: center
 }
