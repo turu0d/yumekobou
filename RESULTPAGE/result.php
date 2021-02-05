@@ -115,13 +115,14 @@ function sortByKey($key_name, $sort_order, $array) {
 					</ul>
 				</nav>
 			</header>
+			<!-- パンくずリスト -->
 			<ol>
 				<li><a href="../TOPPAGE/TOP.html">TOP</a></li>
 				<li>検索結果</li>
 			</ol>
 		</div>
 
-		<!-- みだりの枠 -->
+		<!-- ひだりの枠 -->
 
 		<div class="left-column">
 
@@ -139,6 +140,7 @@ if (isset($_POST['riyu'])) {
     echo 'チェックされていません。<br>';
 }
 ?><br>
+						<!-- 検索条件・エリア -->
 						<form method="post" action="check.php">
 							<ul>
 								<input type="checkbox" name="riyu[]" value="北海道">北海道
@@ -250,6 +252,7 @@ if (isset($_POST['tokucho'])) {
     echo 'チェックされていません。<br>';
 }
 ?>
+						<!-- 検索条件・条件 -->
 									<ul>
 										<input type="checkbox" onClick="b1.display=(this.checked?'':'none')">泉質
 										<div id="toku1" style="display:none">
