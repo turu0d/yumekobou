@@ -1,5 +1,6 @@
 <?php
 
+	//$_POSTに値がない場合、TOP.htmlへ強制遷移
 	if(!isset($_POST['riyu']) OR !isset($_POST['tokucho'])){
 		http_response_code( 301 ) ;
 		header("Location: ../TOPPAGE/TOP.html");
@@ -12,14 +13,13 @@
 	$dbh = new PDO($dsn, $user, $pass);
 	$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); //PDOのエラーレポートの表示。 PDO::ATTR_ERRMODEという属性でPDO::ERRMODE_EXCEPTIONの値を設定することでエラーが発生したときに、PDOExceptionの例外を投げてくれます。
 	
-	$point = array();
-	$data = array();
-	$miseru = array();
-	$riyu = $_POST['riyu'];
-	$tokucho = $_POST['tokucho'];
+	$data = array(); //都道府県絞り込みのSELECT文の結果格納
+	$miseru = array(); //ユーザーに表示する配列
+	$riyu = $_POST['riyu']; //ユーザーが選択した都道府県を格納
+	$tokucho = $_POST['tokucho']; //ユーザーが選択した特徴を格納
 	$i = 0;
 	
-	//都道府県追加
+	//「都」「道」「府」「県」を連結する
 	for($i=0; $i<count($riyu); $i++){
 		if($riyu[$i] == '北海道'){
 		}elseif($riyu[$i] == '大阪' OR $riyu[$i] == '京都'){
@@ -31,9 +31,9 @@
 		}
 	}
 
-	//都道府県絞り込み(id)
+	//ユーザーが選択した都道府県をDBから絞り込み
 	$sql = "SELECT * FROM onsen_info_tb where prefecture in (";
-	$where = array();
+	$where = array(); //where句を記述するための配列
 	foreach($riyu as $value){
 		$where[] = '"'.$value.'"';
 	}
@@ -48,10 +48,10 @@
 		$i++;
 	}
 	for($x=0; $x<$i; $x++){
-					$data[$x]["point"] = 0;	
+		$data[$x]["point"] = 0;	
 	}
 
-	//特徴絞り込み※含む数をpoint配列に格納
+	//ユーザーが選択した特徴に一致する数を$data[]['point']に格納
 	for($x=0; $x<$i; $x++){
 		for($y=0; $y<count($tokucho); $y++){
 			if(!empty($data[$x]["spring_quality"])){
@@ -73,23 +73,25 @@
 			}
 		}
 	}
-		$array = sortByKey('point', SORT_DESC, $data);
 
-		for($i=0; $i<count($array); $i++){
-			if(isset($array[$i]["name"]) AND isset($array[$i]["prefecture"])){
-				array_push($miseru, $array[$i]);
-			}
-		}
-
-function sortByKey($key_name, $sort_order, $array) {
+	//キー基準ソート関数
+	function sortByKey($key_name, $sort_order, $array) {
     foreach ($array as $key => $value) {
         $standard_key_array[$key] = $value[$key_name];
     }
     array_multisort($standard_key_array, $sort_order, $array);
     return $array;
-}
+	}
 
+	//$data[]['point']基準で降順ソートし$arrayに結果を代入
+	$array = sortByKey('point', SORT_DESC, $data);
 
+	//$array[]['name'] or $array[]['prefecture']がnullの場合、それ以降のデータを表示しないようにする。結果は$miseruに代入。
+	for($i=0; $i<count($array); $i++){
+		if(isset($array[$i]["name"]) AND isset($array[$i]["prefecture"])){
+			array_push($miseru, $array[$i]);
+		}
+	}
 ?>
 <!DOCTYPE html>
 
