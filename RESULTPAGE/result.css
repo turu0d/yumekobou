@@ -90,9 +90,17 @@ h2 {
 	padding: 1em 1em;
 	margin: 2em 0;
 	font-weight: bold;
-	color: #6091d3;
 	/*文字色*/
 	background: #FFF;
+}
+/*左の文字色*/
+
+.abc{
+	color: #CD853F;
+}
+
+.tokucho{
+	color: #CD853F;
 }
 
 

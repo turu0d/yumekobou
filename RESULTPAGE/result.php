@@ -146,101 +146,99 @@ if (isset($_POST['riyu'])) {
 								<input type="checkbox" name="riyu[]" value="北海道">北海道
 								<div id="area1" style="display:none">
 								</div><br>
-
-								<input type="checkbox" onClick="a2.display=(this.checked?'':'none')">東北
-								<div id="area2" style="display:none">
-									&ensp; <input type="checkbox" name="riyu[]" value="青森" class="zisage">青森
-									<input type="checkbox" name="riyu[]" value="秋田" class="zisage">秋田
-									<input type="checkbox" name="riyu[]" value="岩手" class="zisage">岩手
-									<input type="checkbox" name="riyu[]" value="山形" class="zisage">山形
-									<input type="checkbox" name="riyu[]" value="宮城" class="zisage">宮城
-									<input type="checkbox" name="riyu[]" value="福島" class="zisage">福島
-								</div><br>
-
-								<input type="checkbox" onClick="a3.display=(this.checked?'':'none')">関東
-								<div id="area3" style="display:none">
-									&ensp; <input type="checkbox" name="riyu[]" value="群馬">群馬
+<!-- 折り畳み展開ポインタ -->
+								<a>▼ 東北</a>
+								<!-- 折り畳まれ部分 -->
+								<div class="abc" id="open">
+									<input type="checkbox" name="riyu[]" value="青森">青森
+									<input type="checkbox" name="riyu[]" value="秋田">秋田
+									<input type="checkbox" name="riyu[]" value="岩手">岩手
+									<input type="checkbox" name="riyu[]" value="山形">山形
+									<input type="checkbox" name="riyu[]" value="宮城">宮城
+									<input type="checkbox" name="riyu[]" value="福島">福島
+								</div>
+<!-- 折り畳み展開ポインタ -->
+								<div onclick="obj=document.getElementById('kantou').style; obj.display=(obj.display=='none')?'block':'none';">
+									<a style="cursor:pointer;">▼関東</a>
+								</div>
+								<!-- 折り畳まれ部分 -->
+								<div class="abc" id="kantou" style="display:none;clear:both;">
+									<input type="checkbox" name="riyu[]" value="群馬">群馬
 									<input type="checkbox" name="riyu[]" value="栃木">栃木
 									<input type="checkbox" name="riyu[]" value="茨城">茨城
 									<input type="checkbox" name="riyu[]" value="千葉">千葉
 									<input type="checkbox" name="riyu[]" value="埼玉">埼玉
 									<input type="checkbox" name="riyu[]" value="東京">東京
 									<input type="checkbox" name="riyu[]" value="神奈川">神奈川
-								</div><br>
+								</div>
 
-
-								<input type="checkbox" onClick="a4.display=(this.checked?'':'none')">中部・東海
-								<div id="area4" style="display:none">
-									&ensp; <input type="checkbox" name="riyu[]" value="長野">長野
+<!-- 折り畳み展開ポインタ -->
+								<a>▼ 中部・関東</a>
+								<!-- 折り畳まれ部分 -->
+								<div class="abc" id="chuubu">
+									<input type="checkbox" name="riyu[]" value="長野">長野
 									<input type="checkbox" name="riyu[]" value="山梨">山梨
 									<input type="checkbox" name="riyu[]" value="静岡">静岡
 									<input type="checkbox" name="riyu[]" value="愛知">愛知
 									<input type="checkbox" name="riyu[]" value="岐阜">岐阜
 									<input type="checkbox" name="riyu[]" value="三重">三重
-								</div><br>
-
-								<input type="checkbox" onClick="a5.display=(this.checked?'':'none')">北陸
-								<div id="area5" style="display:none">
-									&ensp; <input type="checkbox" name="riyu[]" value="新潟">新潟
+								</div>
+<!-- 折り畳み展開ポインタ -->
+								<a>▼ 北陸</a>
+								<!-- 折り畳まれ部分 -->
+								<div class="abc" id="hokuriku">
+									<input type="checkbox" name="riyu[]" value="新潟">新潟
 									<input type="checkbox" name="riyu[]" value="富山">富山
 									<input type="checkbox" name="riyu[]" value="石川">石川
 									<input type="checkbox" name="riyu[]" value="福井">福井
-								</div><br>
+								</div>
 
-
-								<input type="checkbox" onClick="a6.display=(this.checked?'':'none')">近畿
-								<div id="area6" style="display:none">
-									&ensp; <input type="checkbox" name="riyu[]" value="滋賀">滋賀
+<!-- 折り畳み展開ポインタ -->
+								<a>▼ 近畿</a>
+								<!-- 折り畳まれ部分 -->
+								<div class="abc" id="kinki">
+									<input type="checkbox" name="riyu[]" value="滋賀">滋賀
 									<input type="checkbox" name="riyu[]" value="奈良">奈良
 									<input type="checkbox" name="riyu[]" value="京都">京都
 									<input type="checkbox" name="riyu[]" value="大阪">大阪
 									<input type="checkbox" name="riyu[]" value="和歌山">和歌山
 									<input type="checkbox" name="riyu[]" value="兵庫">兵庫
-								</div><br>
-
-								<input type="checkbox" onClick="a7.display=(this.checked?'':'none')">中国
-								<div id="area7" style="display:none">
-									&ensp; <input type="checkbox" name="riyu[]" value="鳥取">鳥取
+								</div>
+<!-- 折り畳み展開ポインタ -->
+								<a>▼ 中国</a>
+								<!-- 折り畳まれ部分 -->
+								<div class="abc" id="chuugoku">
+									<input type="checkbox" name="riyu[]" value="鳥取">鳥取
 									<input type="checkbox" name="riyu[]" value="岡山">岡山
 									<input type="checkbox" name="riyu[]" value="島根">島根
 									<input type="checkbox" name="riyu[]" value="広島">広島
 									<input type="checkbox" name="riyu[]" value="山口">山口
-								</div><br>
+								</div>
+<!-- 折り畳み展開ポインタ -->
+								<a>▼ 四国</a>
 
-								<input type="checkbox" onClick="a8.display=(this.checked?'':'none')">四国
-								<div id="area8" style="display:none">
-									&ensp; <input type="checkbox" name="riyu[]" value="香川">香川
-									<input type="checkbox" name="riyu[]" value="徳島">徳島
-									<input type="checkbox" name="riyu[]" value="高知">高知
-									<input type="checkbox" name="riyu[]" value="愛媛">愛媛
-								</div><br>
-
-								<input type="checkbox" onClick="a9.display=(this.checked?'':'none')">九州
-								<div id="area9" style="display:none">
-									&ensp;
-									<input type="checkbox" name="riyu[]" value="福岡">福岡
-									<input type="checkbox" name="riyu[]" value="佐賀">佐賀
-									<input type="checkbox" name="riyu[]" value="長崎">長崎
-									<input type="checkbox" name="riyu[]" value="大分">大分
-									<input type="checkbox" name="riyu[]" value="熊本">熊本
-									<input type="checkbox" name="riyu[]" value="宮崎">宮崎
-									<input type="checkbox" name="riyu[]" value="鹿児島">鹿児島
-								</div><br>
-
+								<!-- 折り畳まれ部分 -->
+								<div class="abc" id="sikoku">
+									<input type="checkbox" name="riyu[]" value="香川" >香川
+									<input type="checkbox" name="riyu[]" value="徳島" >徳島
+									<input type="checkbox" name="riyu[]" value="高知" >高知
+									<input type="checkbox" name="riyu[]" value="愛媛" >愛媛
+								</div>
+<!-- 折り畳み展開ポインタ -->
+								<a>▼ 九州</a>
+								<!-- 折り畳まれ部分 -->
+								<div class="abc" id="kyuushuu">
+									<input type="checkbox" name="riyu[]" value="福岡" >福岡
+									<input type="checkbox" name="riyu[]" value="佐賀" >佐賀
+									<input type="checkbox" name="riyu[]" value="長崎" >長崎
+									<input type="checkbox" name="riyu[]" value="大分" >大分
+									<input type="checkbox" name="riyu[]" value="熊本" >熊本
+									<input type="checkbox" name="riyu[]" value="宮崎" >宮崎
+									<input type="checkbox" name="riyu[]" value="鹿児島" >鹿児島
+								</div>
 								<input type="checkbox" name="riyu[]" value="沖縄">沖縄<br>
 
-								<script language="javascript">
-									a1 = document.getElementById('area1').style
-									a2 = document.getElementById('area2').style
-									a3 = document.getElementById('area3').style
-									a4 = document.getElementById('area4').style
-									a5 = document.getElementById('area5').style
-									a6 = document.getElementById('area6').style
-									a7 = document.getElementById('area7').style
-									a8 = document.getElementById('area8').style
-									a9 = document.getElementById('area9').style
-
-								</script>
+								
 							</ul>
 						</form>
 						条件<br>
@@ -254,20 +252,22 @@ if (isset($_POST['tokucho'])) {
 ?>
 						<!-- 検索条件・条件 -->
 									<ul>
-										<input type="checkbox" onClick="b1.display=(this.checked?'':'none')">泉質
-										<div id="toku1" style="display:none">
-											&ensp;
+										<!-- 折り畳み展開ポインタ -->
+										<a>▼ 泉質</a>
+										<!-- 折り畳まれ部分 -->
+										<div class="abc" id="sensitu">
 											<input type="checkbox" name="tokucho[]" value="単純温泉">単純温泉
 											<input type="checkbox" name="tokucho[]" value="塩化物泉">塩化物泉
 											<input type="checkbox" name="tokucho[]" value="硫黄泉">硫黄泉
 											<input type="checkbox" name="tokucho[]" value="硫酸塩泉">硫酸塩泉
 											<input type="checkbox" name="tokucho[]" value="炭酸水素塩泉">炭酸水素塩泉
 											<input type="checkbox" name="tokucho[]" value="放射能泉">放射能泉
-										</div><br>
+										</div>
 
-										<input type="checkbox" onClick="b2.display=(this.checked?'':'none')">温泉の色
-										<div id="toku2" style="display:none">
-											&ensp;
+										<!-- 折り畳み展開ポインタ -->
+										<a>▼ 温泉の色</a>
+										<!-- 折り畳まれ部分 -->
+										<div class="abc" id="iro">
 											<input type="checkbox" name="tokucho[]" value="無色透明">無色透明
 											<input type="checkbox" name="tokucho[]" value="白色">白
 											<input type="checkbox" name="tokucho[]" value="赤褐色">赤褐色
@@ -276,45 +276,42 @@ if (isset($_POST['tokucho'])) {
 											<input type="checkbox" name="tokucho[]" value="茶褐色">茶褐色
 											<input type="checkbox" name="tokucho[]" value="乳白色">乳白色
 											<input type="checkbox" name="tokucho[]" value="青色">青
-										</div><br>
+										</div>
 
 
-										<input type="checkbox" onClick="b3.display=(this.checked?'':'none')">日帰り入浴
-										<div id="toku3" style="display:none">
+										<!-- 折り畳み展開ポインタ -->
+										<a>▼ 日帰り入浴</a>
+										<!-- 折り畳まれ部分 -->
+										<div class="abc" id="nyuuyoku">
 											<input type="checkbox" name="tokucho[]" value="可">あり
 											<input type="checkbox" name="tokucho[]" value="否">なし
-										</div><br>
+										</div>
 
-										<input type="checkbox" onClick="b4.display=(this.checked?'':'none')">素泊まり
-										<div id="toku4" style="display:none">
+										<!-- 折り畳み展開ポインタ -->
+										<a>▼ 素泊まり</a>
+										<!-- 折り畳まれ部分 -->
+										<div class="abc" id="sudomari">
 											<input type="checkbox" name="tokucho[]" value="可">あり
 											<input type="checkbox" name="tokucho[]" value="不可">なし
-										</div><br>
+										</div>
 
 
-										<input type="checkbox" onClick="b5.display=(this.checked?'':'none')">1名宿泊
-										<div id="toku5" style="display:none">
-											&ensp;
+										<!-- 折り畳み展開ポインタ -->
+										<a>▼ 1名宿泊</a>
+										<!-- 折り畳まれ部分 -->
+										<div class="abc" id="shukuhaku">
 											<input type="checkbox" name="tokucho[]" value="可">あり
 											<input type="checkbox" name="tokucho[]" value="不可">なし
-										</div><br>
+										</div>
 
-										<input type="checkbox" onClick="b6.display=(this.checked?'':'none')">掛け流し
-										<div id="toku6" style="display:none">
-											&ensp;
+										<!-- 折り畳み展開ポインタ -->
+										<a>▼ 掛け流し</a>
+										<!-- 折り畳まれ部分 -->
+										<div class="abc" id="kakenagasi">
 											<input type="checkbox" name="tokucho[]" value="有">あり
 											<input type="checkbox" name="tokucho[]" value="無">なし
-										</div><br>
+										</div>
 
-										<script language="javascript">
-											b1 = document.getElementById('toku1').style
-											b2 = document.getElementById('toku2').style
-											b3 = document.getElementById('toku3').style
-											b4 = document.getElementById('toku4').style
-											b5 = document.getElementById('toku5').style
-											b6 = document.getElementById('toku6').style
-
-										</script>
 									</ul>
 						<p class="submit"><input type="submit" name="submit" value="再検索"></p>
 					</div>
