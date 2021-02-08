@@ -1,6 +1,10 @@
 <?php
 	session_start();
 	if(!isset($_GET['page_id'])){
+		if(!isset($_POST['riyu']) OR !isset($_POST['tokucho'])){
+			ini_set('display_errors', 0);			
+			echo '<meta http-equiv="Refresh" content="3; url=../TOPPAGE/TOP.html">[error]都道府県と特徴を選択してください。5秒後に遷移します。</meta>';
+		}
 		$dsn = 'mysql:host=database-2.cnjcx8ih0byc.ap-northeast-1.rds.amazonaws.com;dbname=onsen_db;charset=utf8';//MySQLのonsen_dbというデータベースに接続。文字エンコーディングの指定。
 		$user = 'admin';
 		$pass = 'rootroot1';
