@@ -94,9 +94,6 @@
 			}	
 		}
 	}
-
-$id_list = array_column( $miseru, 'point' );
-print_r($id_list);
 ?>
 <!DOCTYPE html>
 
