@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 
-<!-- cssの適用 -->
 <head>
 	<meta charset="utf-8">
 	<title>温泉</title>
@@ -10,7 +9,7 @@
 
 <body class="home">
 
-<!-- ヘッダー -->
+
 	<header>
 		<a id="title" href="TOP.html">
 			<h1>温泉サイト(仮)</h1>
@@ -23,7 +22,6 @@
 
 		<div class="example">
 
-<!-- サイトを開いた時の画像設定 -->
 			<img id="mypic" src="pics1.jpg">
 			<script>
 				var pics_src = new Array("pics1.jpg", "pics2.jpg", "pics3.jpg");
@@ -46,90 +44,80 @@
 		</div>
 
 
-<!-- 特徴から選んだことを送信 -->
-			<form method="POST" target="_blank" action="../RESULTPAGE/result.php">
+
+			<form method="POST" action="../RESULTPAGE/result.php">
 			<div class="box1">
 				<h2>▼ 特徴を選択(複数選択可能)</h2>
 			</div>
 
-            <div class="blocka">
-                <div class="box2">
+					<div class="blocka">
 						<h3>泉質</h3>
 						<div id="toku1">
 							&ensp;
-							<input type="checkbox" name="tokucho[]" value="単純温泉">単純温泉
-							<input type="checkbox" name="tokucho[]" value="塩化物泉">塩化物泉
-							<input type="checkbox" name="tokucho[]" value="硫黄泉">硫黄泉
-							<input type="checkbox" name="tokucho[]" value="硫酸塩泉">硫酸塩泉
-							<input type="checkbox" name="tokucho[]" value="炭酸水素塩泉">炭酸水素塩泉
-							<input type="checkbox" name="tokucho[]" value="放射能泉">放射能泉
+							<input type="checkbox" name="tokucho[]" value="泉質：単純温泉">単純温泉
+							<input type="checkbox" name="tokucho[]" value="泉質：塩化物泉">塩化物泉
+							<input type="checkbox" name="tokucho[]" value="泉質：硫黄泉">硫黄泉
+							<input type="checkbox" name="tokucho[]" value="泉質：硫酸塩泉">硫酸塩泉
+							<input type="checkbox" name="tokucho[]" value="泉質：炭酸水素塩泉">炭酸水素塩泉
+							<input type="checkbox" name="tokucho[]" value="泉質：放射能泉">放射能泉
 						</div><br>
-                </div>
-                <div class="box2">
+						
 						<h3>温泉の色</h3>
 						<div id="toku2">
 							&ensp;
-							<input type="checkbox" name="tokucho[]" value="無色透明">無色透明
-							<input type="checkbox" name="tokucho[]" value="白色">白
-							<input type="checkbox" name="tokucho[]" value="赤褐色">赤褐色
-							<input type="checkbox" name="tokucho[]" value="黄褐色">黄褐色
-							<input type="checkbox" name="tokucho[]" value="緑色">緑
-							<input type="checkbox" name="tokucho[]" value="茶褐色">茶褐色
-							<input type="checkbox" name="tokucho[]" value="乳白色">乳白色
-							<input type="checkbox" name="tokucho[]" value="青色">青
+							<input type="checkbox" name="tokucho[]" value="温泉の色：無色透明">無色透明
+							<input type="checkbox" name="tokucho[]" value="温泉の色白色">白
+							<input type="checkbox" name="tokucho[]" value="温泉の色：赤褐色">赤褐色
+							<input type="checkbox" name="tokucho[]" value="温泉の色：黄褐色">黄褐色
+							<input type="checkbox" name="tokucho[]" value="温泉の色緑色">緑
+							<input type="checkbox" name="tokucho[]" value="温泉の色：茶褐色">茶褐色
+							<input type="checkbox" name="tokucho[]" value="温泉の色：乳白色">乳白色
+							<input type="checkbox" name="tokucho[]" value="温泉の色：青色">青
 						</div><br>
-                </div>
-                <div class="box2">
+				
 						<h3>日帰り入浴</h3>
 						<div id="toku3">
 							&ensp;
-							<input type="checkbox" name="tokucho[]" value="可">あり
-							<input type="checkbox" name="tokucho[]" value="否">なし
+							<input type="checkbox" name="tokucho[]" value="日帰り入浴：あり">あり
+							<input type="checkbox" name="tokucho[]" value="日帰り入浴：なし">なし
 						</div><br>
 					</div>
-                </div>
-            <div class="blockb">
-                    <div class="box2">
+						
+					<div class="blockb">
 						<h3>素泊まり</h3>
 						<div id="toku4">
 							&ensp;
-							<input type="checkbox" name="tokucho[]" value="可">あり
-							<input type="checkbox" name="tokucho[]" value="不可">なし
+							<input type="checkbox" name="tokucho[]" value="素泊まり：あり">あり
+							<input type="checkbox" name="tokucho[]" value="素泊まり：なし">なし
 						</div><br>
-                </div>
-                    <div class="box2">
+
 						<h3>1名宿泊</h3>
 						<div id="toku5">
 							&ensp;
-							<input type="checkbox" name="tokucho[]" value="可">あり
-							<input type="checkbox" name="tokucho[]" value="不可">なし
+							<input type="checkbox" name="tokucho[]" value="1名宿泊：あり">あり
+							<input type="checkbox" name="tokucho[]" value="1名宿泊：なし">なし
 						</div><br>
-                </div>
-	               <div class="box2">
+	
 						<h3>掛け流し</h3>
 						<div id="toku6">
 							&ensp;
-							<input type="checkbox" name="tokucho[]" value="有">あり
-							<input type="checkbox" name="tokucho[]" value="無">なし
+							<input type="checkbox" name="tokucho[]" value="掛け流し：あり">あり
+							<input type="checkbox" name="tokucho[]" value="掛け流し：なし">なし
 						</div><br>
 					</div>
-                </div>
 
-<!-- エリアから選んだことを送信 -->
+
 				<div class="box1">
 					<h2>▼ エリアから選択(複数選択可能)</h2>
 				</div>
 
 				<div class="blocka">
-                
 					<div id="area1">
-					</div>
-                    
-                    <div class="box2">
+					</div><br>
+
 					<h3>北海道・東北</h3>
 					<div id="area2">
-						&ensp; 
-                        <input type="checkbox" name="riyu[]" value="北海道">北海道
+						&ensp; <input type="checkbox" name="riyu[]" value="北海道">北海道
 						<input type="checkbox" name="riyu[]" value="青森" class="zisage">青森
 						<input type="checkbox" name="riyu[]" value="秋田" class="zisage">秋田
 						<input type="checkbox" name="riyu[]" value="岩手" class="zisage">岩手
@@ -137,13 +125,10 @@
 						<input type="checkbox" name="riyu[]" value="宮城" class="zisage">宮城
 						<input type="checkbox" name="riyu[]" value="福島" class="zisage">福島
 					</div><br>
-                    </div>
-                    
-                    <div class="box2">
+
 					<h3>関東</h3>
 					<div id="area3">
-						&ensp; 
-                        <input type="checkbox" name="riyu[]" value="群馬">群馬
+						&ensp; <input type="checkbox" name="riyu[]" value="群馬">群馬
 						<input type="checkbox" name="riyu[]" value="栃木">栃木
 						<input type="checkbox" name="riyu[]" value="茨城">茨城
 						<input type="checkbox" name="riyu[]" value="千葉">千葉
@@ -151,73 +136,56 @@
 						<input type="checkbox" name="riyu[]" value="東京">東京
 						<input type="checkbox" name="riyu[]" value="神奈川">神奈川
 					</div><br>
-                    </div>
 
 
-                    <div class="box2">
 					<h3>中部・東海</h3>
 					<div id="area4">
-						&ensp; 
-                        <input type="checkbox" name="riyu[]" value="長野">長野
+						&ensp; <input type="checkbox" name="riyu[]" value="長野">長野
 						<input type="checkbox" name="riyu[]" value="山梨">山梨
 						<input type="checkbox" name="riyu[]" value="静岡">静岡
 						<input type="checkbox" name="riyu[]" value="愛知">愛知
 						<input type="checkbox" name="riyu[]" value="岐阜">岐阜
 						<input type="checkbox" name="riyu[]" value="三重">三重
 					</div><br>
-                    </div>
 
-                    <div class="box2">
 					<h3>北陸</h3>
 					<div id="area5">
-						&ensp; 
-                        <input type="checkbox" name="riyu[]" value="新潟">新潟
+						&ensp; <input type="checkbox" name="riyu[]" value="新潟">新潟
 						<input type="checkbox" name="riyu[]" value="富山">富山
 						<input type="checkbox" name="riyu[]" value="石川">石川
 						<input type="checkbox" name="riyu[]" value="福井">福井
 					</div><br>
-                    </div>
 
 				</div>
 				<div class="blockb">
-                    <div class="box2">
 
 					<h3>近畿</h3>
 					<div id="area6">
-						&ensp; 
-                        <input type="checkbox" name="riyu[]" value="滋賀">滋賀
+						&ensp; <input type="checkbox" name="riyu[]" value="滋賀">滋賀
 						<input type="checkbox" name="riyu[]" value="奈良">奈良
 						<input type="checkbox" name="riyu[]" value="京都">京都
 						<input type="checkbox" name="riyu[]" value="大阪">大阪
 						<input type="checkbox" name="riyu[]" value="和歌山">和歌山
 						<input type="checkbox" name="riyu[]" value="兵庫">兵庫
 					</div><br>
-                    </div>
-                    
-                    <div class="box2">
+
 					<h3>中国</h3>
 					<div id="area7">
-						&ensp; 
-                        <input type="checkbox" name="riyu[]" value="鳥取">鳥取
+						&ensp; <input type="checkbox" name="riyu[]" value="鳥取">鳥取
 						<input type="checkbox" name="riyu[]" value="岡山">岡山
 						<input type="checkbox" name="riyu[]" value="島根">島根
 						<input type="checkbox" name="riyu[]" value="広島">広島
 						<input type="checkbox" name="riyu[]" value="山口">山口
 					</div><br>
-                    </div>
 
-                    <div class="box2">
 					<h3>四国</h3>
 					<div id="area8">
-						&ensp; 
-                        <input type="checkbox" name="riyu[]" value="香川">香川
+						&ensp; <input type="checkbox" name="riyu[]" value="香川">香川
 						<input type="checkbox" name="riyu[]" value="徳島">徳島
 						<input type="checkbox" name="riyu[]" value="高知">高知
 						<input type="checkbox" name="riyu[]" value="愛媛">愛媛
 					</div><br>
-                    </div>
 
-                    <div class="box2">
 					<h3>九州</h3>
 					<div id="area9">
 						&ensp;
@@ -230,16 +198,12 @@
 						<input type="checkbox" name="riyu[]" value="鹿児島">鹿児島
 						<input type="checkbox" name="riyu[]" value="沖縄">沖縄
 					</div><br>
-                    </div>
 						
 				</div>
 
-<!-- 検索ボタンの設置 -->
 				<div class="tes"><input type="submit" value="検索する" class="search"></div>
 			</form>
 	</main>
-    
-<!-- フッター -->
 			<footer>
 				<div class="foot">
 					<div class="left">
