@@ -118,10 +118,49 @@ footer {
 div.blocka {
    float: left;
    width: 50%; 
+    
 }
 
 div.blockb {
-	margin-top: 40px;;
+	margin-top: 51px;
+}
+
+div.blockc {
+   float: left;
+   width: 50%; 
+    
+}
+
+div.blockd {
+	margin-top: 51px;
+}
+
+/*特徴・エリア見出し*/
+h2 {
+  position: relative;
+  padding: 1rem 2rem calc(1rem + 10px);
+  background: #CCCCFF;
+}
+
+h2:before {
+  position: absolute;
+  top: -7px;
+  left: -7px;
+  width: 100%;
+  height: 100%;
+  content: '';
+  border: 4px solid #000;
+}
+
+.box2 {
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    font-weight: bold;
+    border: solid 3px #000000;
+}
+.box2 p {
+    margin: 0; 
+    padding: 0;
 }
 
 
