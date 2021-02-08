@@ -147,13 +147,11 @@ if (isset($_POST['riyu'])) {
 						<!-- 検索条件・エリア -->
 						<form method="post" action="check.php">
 							<ul>
-								<input type="checkbox" name="riyu[]" value="北海道">北海道
-								<div id="area1" style="display:none">
-								</div><br>
 <!-- 折り畳み展開ポインタ -->
-								<a>▼ 東北</a>
+								<a>▼ 北海道・東北</a>
 								<!-- 折り畳まれ部分 -->
 								<div class="abc" id="open">
+									<input type="checkbox" name="riyu[]" value="北海道">北海道<br>
 									<input type="checkbox" name="riyu[]" value="青森">青森
 									<input type="checkbox" name="riyu[]" value="秋田">秋田
 									<input type="checkbox" name="riyu[]" value="岩手">岩手
@@ -162,11 +160,9 @@ if (isset($_POST['riyu'])) {
 									<input type="checkbox" name="riyu[]" value="福島">福島
 								</div>
 <!-- 折り畳み展開ポインタ -->
-								<div onclick="obj=document.getElementById('kantou').style; obj.display=(obj.display=='none')?'block':'none';">
-									<a style="cursor:pointer;">▼関東</a>
-								</div>
+									<a>▼関東</a>
 								<!-- 折り畳まれ部分 -->
-								<div class="abc" id="kantou" style="display:none;clear:both;">
+								<div class="abc" id="kantou">
 									<input type="checkbox" name="riyu[]" value="群馬">群馬
 									<input type="checkbox" name="riyu[]" value="栃木">栃木
 									<input type="checkbox" name="riyu[]" value="茨城">茨城
@@ -229,7 +225,7 @@ if (isset($_POST['riyu'])) {
 									<input type="checkbox" name="riyu[]" value="愛媛" >愛媛
 								</div>
 <!-- 折り畳み展開ポインタ -->
-								<a>▼ 九州</a>
+								<a>▼ 九州・沖縄</a>
 								<!-- 折り畳まれ部分 -->
 								<div class="abc" id="kyuushuu">
 									<input type="checkbox" name="riyu[]" value="福岡" >福岡
@@ -238,11 +234,9 @@ if (isset($_POST['riyu'])) {
 									<input type="checkbox" name="riyu[]" value="大分" >大分
 									<input type="checkbox" name="riyu[]" value="熊本" >熊本
 									<input type="checkbox" name="riyu[]" value="宮崎" >宮崎
-									<input type="checkbox" name="riyu[]" value="鹿児島" >鹿児島
+									<input type="checkbox" name="riyu[]" value="鹿児島" >鹿児島<br>
+									<input type="checkbox" name="riyu[]" value="沖縄">沖縄
 								</div>
-								<input type="checkbox" name="riyu[]" value="沖縄">沖縄<br>
-
-								
 							</ul>
 						</form>
 						条件<br>
@@ -260,26 +254,26 @@ if (isset($_POST['tokucho'])) {
 										<a>▼ 泉質</a>
 										<!-- 折り畳まれ部分 -->
 										<div class="abc" id="sensitu">
-											<input type="checkbox" name="tokucho[]" value="単純温泉">単純温泉
-											<input type="checkbox" name="tokucho[]" value="塩化物泉">塩化物泉
-											<input type="checkbox" name="tokucho[]" value="硫黄泉">硫黄泉
-											<input type="checkbox" name="tokucho[]" value="硫酸塩泉">硫酸塩泉
-											<input type="checkbox" name="tokucho[]" value="炭酸水素塩泉">炭酸水素塩泉
-											<input type="checkbox" name="tokucho[]" value="放射能泉">放射能泉
+											<input type="checkbox" name="tokucho[]" value="泉質：単純温泉">単純温泉
+											<input type="checkbox" name="tokucho[]" value="泉質：塩化物泉">塩化物泉
+											<input type="checkbox" name="tokucho[]" value="泉質：硫黄泉">硫黄泉
+											<input type="checkbox" name="tokucho[]" value="泉質：硫酸塩泉">硫酸塩泉
+											<input type="checkbox" name="tokucho[]" value="泉質：炭酸水素塩泉">炭酸水素塩泉
+											<input type="checkbox" name="tokucho[]" value="泉質：放射能泉">放射能泉
 										</div>
 
 										<!-- 折り畳み展開ポインタ -->
 										<a>▼ 温泉の色</a>
 										<!-- 折り畳まれ部分 -->
 										<div class="abc" id="iro">
-											<input type="checkbox" name="tokucho[]" value="無色透明">無色透明
-											<input type="checkbox" name="tokucho[]" value="白色">白
-											<input type="checkbox" name="tokucho[]" value="赤褐色">赤褐色
-											<input type="checkbox" name="tokucho[]" value="黄褐色">黄褐色
-											<input type="checkbox" name="tokucho[]" value="緑色">緑
-											<input type="checkbox" name="tokucho[]" value="茶褐色">茶褐色
-											<input type="checkbox" name="tokucho[]" value="乳白色">乳白色
-											<input type="checkbox" name="tokucho[]" value="青色">青
+											<input type="checkbox" name="tokucho[]" value="温泉の色：無色透明">無色透明
+											<input type="checkbox" name="tokucho[]" value="温泉の色：白色">白
+											<input type="checkbox" name="tokucho[]" value="温泉の色：赤褐色">赤褐色
+											<input type="checkbox" name="tokucho[]" value="温泉の色：黄褐色">黄褐色
+											<input type="checkbox" name="tokucho[]" value="温泉の色：緑色">緑
+											<input type="checkbox" name="tokucho[]" value="温泉の色：茶褐色">茶褐色
+											<input type="checkbox" name="tokucho[]" value="温泉の色：乳白色">乳白色
+											<input type="checkbox" name="tokucho[]" value="温泉の色：青色">青
 										</div>
 
 
@@ -287,16 +281,16 @@ if (isset($_POST['tokucho'])) {
 										<a>▼ 日帰り入浴</a>
 										<!-- 折り畳まれ部分 -->
 										<div class="abc" id="nyuuyoku">
-											<input type="checkbox" name="tokucho[]" value="可">あり
-											<input type="checkbox" name="tokucho[]" value="否">なし
+											<input type="checkbox" name="tokucho[]" value="日帰り入浴：あり">あり
+											<input type="checkbox" name="tokucho[]" value="日帰り入浴：なし">なし
 										</div>
 
 										<!-- 折り畳み展開ポインタ -->
 										<a>▼ 素泊まり</a>
 										<!-- 折り畳まれ部分 -->
 										<div class="abc" id="sudomari">
-											<input type="checkbox" name="tokucho[]" value="可">あり
-											<input type="checkbox" name="tokucho[]" value="不可">なし
+											<input type="checkbox" name="tokucho[]" value="素泊まり：あり">あり
+											<input type="checkbox" name="tokucho[]" value="素泊まり：なし">なし
 										</div>
 
 
@@ -304,16 +298,16 @@ if (isset($_POST['tokucho'])) {
 										<a>▼ 1名宿泊</a>
 										<!-- 折り畳まれ部分 -->
 										<div class="abc" id="shukuhaku">
-											<input type="checkbox" name="tokucho[]" value="可">あり
-											<input type="checkbox" name="tokucho[]" value="不可">なし
+											<input type="checkbox" name="tokucho[]" value="1名宿泊：あり">あり
+											<input type="checkbox" name="tokucho[]" value="1名宿泊：なし">なし
 										</div>
 
 										<!-- 折り畳み展開ポインタ -->
 										<a>▼ 掛け流し</a>
 										<!-- 折り畳まれ部分 -->
 										<div class="abc" id="kakenagasi">
-											<input type="checkbox" name="tokucho[]" value="有">あり
-											<input type="checkbox" name="tokucho[]" value="無">なし
+											<input type="checkbox" name="tokucho[]" value="掛け流し：あり">あり
+											<input type="checkbox" name="tokucho[]" value="掛け流し：なし">なし
 										</div>
 
 									</ul>
