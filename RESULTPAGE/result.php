@@ -1,4 +1,5 @@
 <?php
+	session_start();
 	if(!isset($_GET['page_id'])){
 		$dsn = 'mysql:host=database-2.cnjcx8ih0byc.ap-northeast-1.rds.amazonaws.com;dbname=onsen_db;charset=utf8';//MySQLのonsen_dbというデータベースに接続。文字エンコーディングの指定。
 		$user = 'admin';
@@ -91,9 +92,9 @@
 	}
 
 	//ページング
-	define('MAX', 5);
-	$data_num = count($_SESSION['array']);
-	$page_num = ceil($data_num / MAX);
+	define('MAX', 5); //1ページ当たりの表示件数
+	$data_num = count($_SESSION['array']); //データ数
+	$page_num = ceil($data_num / MAX); //ページ数
 
 	if(!isset($_GET['page_id'])){
 		$now = 1;
@@ -101,8 +102,8 @@
 		$now = $_GET['page_id'];
 	}
 
-	$start_no = ($now - 1) * MAX;
-	$disp_data = array_slice($_SESSION['array'], $start_no, MAX, true);
+	$start_no = ($now - 1) * MAX; //配列の何番目から取得するかの添え字
+	$disp_data = array_slice($_SESSION['array'], $start_no, MAX, true); //表示用配列
 ?>
 <!DOCTYPE html>
 
@@ -345,8 +346,16 @@ if (isset($_POST['tokucho'])) {
 					<h2>検索結果</h2>
 						<?php
 							$a = $start_no;
+							$err_flag = 0;
 							foreach($disp_data as $val){
-								$no = $a + 1;
+								$no = $a + 1; //表示用添え字
+								
+								//温泉名、都道府県がnullならエラーログ
+								if(!isset($val['name']) OR !isset($val['prefecture'])){
+									echo "<div>{$no}. ごめんなさい、データを表示できませんでした。</div>";
+									continue;
+								}
+								
 								echo '<div class="oneOfKekka">';
 								echo '<div><form method="post" name="form'."{$a}".'" action="../DETAILPAGE/detail.php">';
 								echo "{$no}. {$val['name']} ({$val['prefecture']})</div>";
