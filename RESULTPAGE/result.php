@@ -1,99 +1,110 @@
 <?php
+	session_start();
+	if(!isset($_GET['page_id'])){
+		$dsn = 'mysql:host=database-2.cnjcx8ih0byc.ap-northeast-1.rds.amazonaws.com;dbname=onsen_db;charset=utf8';//MySQLのonsen_dbというデータベースに接続。文字エンコーディングの指定。
+		$user = 'admin';
+		$pass = 'rootroot1';
+		$dbh = new PDO($dsn, $user, $pass);
+		$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); //PDOのエラーレポートの表示。 PDO::ATTR_ERRMODEという属性でPDO::ERRMODE_EXCEPTIONの値を設定することでエラーが発生したときに、PDOExceptionの例外を投げてくれます。
 
-	//$_POSTに値がない場合、TOP.htmlへ強制遷移
-	if(!isset($_POST['riyu']) OR !isset($_POST['tokucho'])){
-		http_response_code( 301 ) ;
-		header("Location: ../TOPPAGE/TOP.html");
-		exit ;
-	}
+		$data = array(); //都道府県絞り込みのSELECT文の結果格納
+		$miseru = array(); //ユーザーに表示する配列
+		$riyu = $_POST['riyu']; //ユーザーが選択した都道府県を格納
+		$tokucho = $_POST['tokucho']; //ユーザーが選択した特徴を格納
+		$i = 0;
 
-	$dsn = 'mysql:host=database-2.cnjcx8ih0byc.ap-northeast-1.rds.amazonaws.com;dbname=onsen_db;charset=utf8';//MySQLのonsen_dbというデータベースに接続。文字エンコーディングの指定。
-	$user = 'admin';
-	$pass = 'rootroot1';
-	$dbh = new PDO($dsn, $user, $pass);
-	$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); //PDOのエラーレポートの表示。 PDO::ATTR_ERRMODEという属性でPDO::ERRMODE_EXCEPTIONの値を設定することでエラーが発生したときに、PDOExceptionの例外を投げてくれます。
-	
-	$data = array(); //都道府県絞り込みのSELECT文の結果格納
-	$miseru = array(); //ユーザーに表示する配列
-	$riyu = $_POST['riyu']; //ユーザーが選択した都道府県を格納
-	$tokucho = $_POST['tokucho']; //ユーザーが選択した特徴を格納
-	$i = 0;
-	
-	//「都」「道」「府」「県」を連結する
-	for($i=0; $i<count($riyu); $i++){
-		if($riyu[$i] == '北海道'){
-		}elseif($riyu[$i] == '大阪' OR $riyu[$i] == '京都'){
-			$riyu[$i] .= '府';
-		}elseif($riyu[$i] == '東京'){
-			$riyu[$i] .= '都';
-		}else{
-			$riyu[$i] .= '県';
+		//「都」「道」「府」「県」を連結する
+		for($i=0; $i<count($riyu); $i++){
+			if($riyu[$i] == '北海道'){
+			}elseif($riyu[$i] == '大阪' OR $riyu[$i] == '京都'){
+				$riyu[$i] .= '府';
+			}elseif($riyu[$i] == '東京'){
+				$riyu[$i] .= '都';
+			}else{
+				$riyu[$i] .= '県';
+			}
 		}
-	}
 
-	//ユーザーが選択した都道府県をDBから絞り込み
-	$sql = "SELECT * FROM onsen_info_tb where prefecture in (";
-	$where = array(); //where句を記述するための配列
-	foreach($riyu as $value){
-		$where[] = '"'.$value.'"';
-	}
-	if(count($where)>0){
-		$sql.= implode($where, ", ");
-	}
-	$sql .= ")";
-	$stmt = $dbh->prepare($sql);
-	$stmt->execute();
-	while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
-		$data[] = $row;
-		$i++;
-	}
-	for($x=0; $x<$i; $x++){
-		$data[$x]["point"] = 0;	
-	}
+		//ユーザーが選択した都道府県をDBから絞り込み
+		$sql = "SELECT * FROM onsen_info_tb where prefecture in (";
+		$where = array(); //where句を記述するための配列
+		foreach($riyu as $value){
+			$where[] = '"'.$value.'"';
+		}
+		if(count($where)>0){
+			$sql.= implode($where, ", ");
+		}
+		$sql .= ")";
+		$stmt = $dbh->prepare($sql);
+		$stmt->execute();
+		while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
+			$data[] = $row;
+			$i++;
+		}
+		for($x=0; $x<$i; $x++){
+			$data[$x]["point"] = 0;	
+		}
 
-	//ユーザーが選択した特徴に一致する数を$data[]['point']に格納
-	for($x=0; $x<$i; $x++){
-		for($y=0; $y<count($tokucho); $y++){
-			if(!empty($data[$x]["spring_quality"])){
-				if(strrpos($data[$x]["spring_quality"], $tokucho[$y]) !== false){
-					$data[$x]["point"] ++;
-				}	
-				if(strrpos($data[$x]["spring_color"], $tokucho[$y]) !== false){
-					$data[$x]["point"] ++;
-				}	
-				if(strrpos($data[$x]["stay_without_meals"], $tokucho[$y]) !== false){
-					$data[$x]["point"] ++;
-				}	
-				if(strrpos($data[$x]["one_person_accounnodation"], $tokucho[$y]) !== false){
-					$data[$x]["point"] ++;
-				}	
-				if(strrpos($data[$x]["flowing"], $tokucho[$y]) !== false){
-					$data[$x]["point"] ++;
+		//ユーザーが選択した特徴に一致する数を$data[]['point']に格納
+		for($x=0; $x<$i; $x++){
+			for($y=0; $y<count($tokucho); $y++){
+				if(!empty($data[$x]["spring_quality"])){
+					if(strrpos($data[$x]["spring_quality"], $tokucho[$y]) !== false){
+						$data[$x]["point"] ++;
+					}	
+					if(strrpos($data[$x]["spring_color"], $tokucho[$y]) !== false){
+						$data[$x]["point"] ++;
+					}	
+					if(strrpos($data[$x]["stay_without_meals"], $tokucho[$y]) !== false){
+						$data[$x]["point"] ++;
+					}	
+					if(strrpos($data[$x]["one_person_accounnodation"], $tokucho[$y]) !== false){
+						$data[$x]["point"] ++;
+					}	
+					if(strrpos($data[$x]["flowing"], $tokucho[$y]) !== false){
+						$data[$x]["point"] ++;
+					}	
+				}
+			}
+		}
+
+		//キー基準ソート関数
+		function sortByKey($key_name, $sort_order, $array) {
+			foreach ($array as $key => $value) {
+					$standard_key_array[$key] = $value[$key_name];
+			}
+			array_multisort($standard_key_array, $sort_order, $array);
+			return $array;
+		}
+
+		//$data[]['point']基準で降順ソートし$arrayに結果を代入
+		$array = sortByKey('point', SORT_DESC, $data);
+
+		//$array[]['point']>=1 かつ $array[]['name'] or $array[]['prefecture']がnot nullの要素を$miseruに代入
+		for($i=0; $i<count($array); $i++){
+			if($array[$i]["point"] >= 1){
+				if(isset($array[$i]["name"]) AND isset($array[$i]["prefecture"])){
+					array_push($miseru, $array[$i]);
 				}	
 			}
 		}
+		$_SESSION['array'] = $miseru;	
 	}
 
-	//キー基準ソート関数
-	function sortByKey($key_name, $sort_order, $array) {
-    foreach ($array as $key => $value) {
-        $standard_key_array[$key] = $value[$key_name];
-    }
-    array_multisort($standard_key_array, $sort_order, $array);
-    return $array;
+	//ページング
+	define('MAX', 5);
+	$data_num = count($_SESSION['array']);
+	$page_num = ceil($data_num / MAX);
+
+	if(!isset($_GET['page_id'])){
+		$now = 1;
+	}else{
+		$now = $_GET['page_id'];
 	}
 
-	//$data[]['point']基準で降順ソートし$arrayに結果を代入
-	$array = sortByKey('point', SORT_DESC, $data);
-
-	//$array[]['point']>=1 かつ $array[]['name'] or $array[]['prefecture']がnot nullの要素を$miseruに代入
-	for($i=0; $i<count($array); $i++){
-		if($array[$i]["point"] >= 1){
-			if(isset($array[$i]["name"]) AND isset($array[$i]["prefecture"])){
-				array_push($miseru, $array[$i]);
-			}	
-		}
-	}
+	$start_no = ($now - 1) * MAX;
+	$disp_data = array_slice($_SESSION['array'], $start_no, MAX, true);
+var_dump($start_no);	
 ?>
 <!DOCTYPE html>
 
@@ -335,20 +346,27 @@ if (isset($_POST['tokucho'])) {
 			<div class="kekka">
 					<h2>検索結果</h2>
 						<?php
-							for($a=0; $a<count($miseru); $a++){
-								if(empty($miseru[$a]['name']) OR empty($miseru[$a]['prefecture']) OR empty($miseru[$a]['id'])){
-									break;
-								}
+							$a = $start_no;
+							foreach($disp_data as $val){
 								$no = $a + 1;
 								echo '<div class="oneOfKekka">';
 								echo '<div><form method="post" name="form'."{$a}".'" action="../DETAILPAGE/detail.php">';
-								echo "{$no}. {$miseru[$a]['name']} ({$miseru[$a]['prefecture']})</div>";
+								echo "{$no}. {$val['name']} ({$val['prefecture']})</div>";
 								
-								echo '<div><input type="hidden" name="onsen"'." value='{$miseru[$a]["id"]}'>";
+								echo '<div><input type="hidden" name="onsen"'." value='{$val["id"]}'>";
 								echo '<a href="#" onclick="document.form'."{$a}".'.submit();">';
-								echo "<img src={$miseru[$a]["image"]}".' width="250px" height="190px">';
+								echo "<img src={$val["image"]}".' width="250px" height="190px">';
 								echo '</img></a></form></div>';
-								echo '</div>';
+								echo '</div><br>';
+								$a++;
+							}
+							echo '<br>';
+							for($i = 1; $i <= $page_num; $i++){ // 最大ページ数分リンクを作成
+									if ($i == $now) { // 現在表示中のページ数の場合はリンクを貼らない
+											echo $now. '　'; 
+									} else {
+											echo "<a href='../RESULTPAGE/result.php?page_id=". $i. "'>". $i. '</a>'. '　';
+									}
 							}
 						?>
 			</div>
