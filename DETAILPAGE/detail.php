@@ -15,7 +15,7 @@
 	$array = $_POST['onsen'];
 
 try{
-	$sql = 'SELECT * FROM onsen_info_tb WHERE id = :id';
+	$sql = 'SELECT * FROM onsen_info_tb_2 WHERE id = :id';
 	$stmt = $dbh->prepare($sql);
 	$stmt->bindValue(':id', $array, PDO::PARAM_STR);
 	$stmt->execute();

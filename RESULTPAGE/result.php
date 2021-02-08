@@ -1,5 +1,4 @@
 <?php
-	session_start();
 	if(!isset($_GET['page_id'])){
 		$dsn = 'mysql:host=database-2.cnjcx8ih0byc.ap-northeast-1.rds.amazonaws.com;dbname=onsen_db;charset=utf8';//MySQLのonsen_dbというデータベースに接続。文字エンコーディングの指定。
 		$user = 'admin';
@@ -26,7 +25,7 @@
 		}
 
 		//ユーザーが選択した都道府県をDBから絞り込み
-		$sql = "SELECT * FROM onsen_info_tb where prefecture in (";
+		$sql = "SELECT * FROM onsen_info_tb_2 where prefecture in (";
 		$where = array(); //where句を記述するための配列
 		foreach($riyu as $value){
 			$where[] = '"'.$value.'"';
@@ -104,7 +103,6 @@
 
 	$start_no = ($now - 1) * MAX;
 	$disp_data = array_slice($_SESSION['array'], $start_no, MAX, true);
-var_dump($start_no);	
 ?>
 <!DOCTYPE html>
 
