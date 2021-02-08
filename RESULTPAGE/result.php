@@ -125,14 +125,6 @@
 	<main>
 		<div class="title">
 			<h1>検索結果</h1>
-			<header>
-				<nav>
-					<ul>
-						<li><a href="../TOPPAGE/TOP.html">TOP</a></li>
-						<li><a href="../DETAILPAGE/detail.php">詳細</a></li>
-					</ul>
-				</nav>
-			</header>
 			<!-- パンくずリスト -->
 			<ol>
 				<li><a href="../TOPPAGE/TOP.html">TOP</a></li>
